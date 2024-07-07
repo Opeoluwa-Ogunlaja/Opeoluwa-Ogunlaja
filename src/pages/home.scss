@@ -1,24 +1,25 @@
 .stage-cube-cont {
   container: stage / inline-size;
-  --size: 10vw;
-  contain: paint;
+  --size: clamp(200px, 15vw, 300px);
 }
 
 .cubespinner {
   animation-name: spincube;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
   animation-duration: 12s;
   transform-style: preserve-3d;
-  transform-origin: var(--size) var(--size);
+  transform-origin: calc(var(--size) / 2) calc(var(--size) / 2);
   position: relative;
 
   & > div {
     position: absolute;
-    width: calc(var(--size) * 2);
-    height: calc(var(--size) * 2);
+    width: var(--size);
+    height: var(--size);
     border: 1px solid #ccc;
-    background: rgb(255 255 255 / 0.4);
+    @apply bg-green;
+    @apply bg-opacity-[0.05];
     font-size: 100px;
     display: flex;
     justify-content: center;
@@ -26,27 +27,27 @@
     box-shadow: 0 0 20px 0px lightyellow;
   }
   .face1 {
-    transform: translateZ(var(--size));
+    transform: translateZ(calc(var(--size) / 2));
   }
 
   .face2 {
-    transform: rotateY(90deg) translateZ(var(--size));
+    transform: rotateY(90deg) translateZ(calc(var(--size) / 2));
   }
 
   .face3 {
-    transform: rotateY(90deg) rotateX(90deg) translateZ(var(--size));
+    transform: rotateY(90deg) rotateX(90deg) translateZ(calc(var(--size) / 2));
   }
 
   .face4 {
-    transform: rotateY(180deg) rotateZ(90deg) translateZ(var(--size));
+    transform: rotateY(180deg) rotateZ(90deg) translateZ(calc(var(--size) / 2));
   }
 
   .face5 {
-    transform: rotateY(-90deg) rotateZ(90deg) translateZ(var(--size));
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(calc(var(--size) / 2));
   }
 
   .face6 {
-    transform: rotateX(-90deg) translateZ(var(--size));
+    transform: rotateX(-90deg) translateZ(calc(var(--size) / 2));
   }
 }
 

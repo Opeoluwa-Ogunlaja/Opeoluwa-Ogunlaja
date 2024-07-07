@@ -22,7 +22,7 @@ const Home = () => {
           </a>
         </div>
       </header>
-      <main className="mt-32 p-64">
+      <main className="mt-32 px-64">
         <section className="hero-section relative grid h-fit">
           <div className="flex flex-col gap-24 font-axiforma">
             <div className="big-text inline-block">
@@ -43,16 +43,16 @@ const Home = () => {
 
           <div className="stage-cube-cont m-16">
             <div className="cubespinner">
-              <div className="face1">hehe</div>
-              <div className="face2">hehe</div>
-              <div className="face3">hehe</div>
-              <div className="face4">hehe</div>
-              <div className="face5">hehe</div>
-              <div className="face6">hehe</div>
+              <div className="face1"><ReactLogo/></div>
+              <div className="face2"><ReactLogo/></div>
+              <div className="face3"><ReactLogo/></div>
+              <div className="face4"><ReactLogo/></div>
+              <div className="face5"><ReactLogo/></div>
+              <div className="face6"><ReactLogo/></div>
             </div>
           </div>
 
-          <div className="m-0 absolute z-10 -mb-64 aspect-[1/2] w-32 self-end justify-self-center rounded-[9999px] border border-neutral-light-200 shadow-inner"></div>
+          <div className="m-0 absolute z-10 bottom-0 -mb-64 aspect-[1/2] w-32 self-end justify-self-center rounded-[9999px] border border-neutral-light-200 shadow-inner"></div>
         </section>
 
         <section className="skills-section mt-96">
