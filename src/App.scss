@@ -1,0 +1,86 @@
+@layer utilities, reset, framework, layout, components, animations;
+
+@layer reset {
+  :root {
+    --animate-duration: 0.3s;
+    --text-10: 10px;
+    --text-12: 12px;
+    --text-14: 14px;
+    --text-16: 16px;
+    --text-18: 18px;
+    --text-20: 20px;
+    --text-24: 24px;
+    --text-28: 28px;
+    --text-32: 32px;
+    --text-40: 40px;
+    --text-48: 48px;
+    --text-56: 56px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family:
+      Quicksand,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      'Open Sans',
+      'Helvetica Neue',
+      sans-serif;
+  }
+
+  .big-text {
+    font-size: clamp(var(--text-32), 5vw, var(--text-48)) !important;
+  }
+}
+
+@layer framework {
+  .alternate {
+    animation-direction: alternate;
+  }
+
+  .alternate {
+    animation-direction: reverse;
+  }
+
+  .infinite {
+    animation-iteration-count: infinite;
+  }
+
+  @for $i from 1 to 20 {
+    .animate-delay-#{$i} {
+      animation-delay: calc(#{$i} * 0.3s);
+    }
+  }
+
+  @for $i from 1 to 20 {
+    .animate-duration-#{$i} {
+      animation-duration: calc(#{$i} * 0.3s);
+    }
+  }
+
+  .animate-forwards {
+    animation-fill-mode: forwards;
+  }
+}
+
+@layer layout {
+  .hero-section {
+    grid-auto-flow: column;
+    // grid-template-columns: auto-fill(minmax(50%, min-content)) minmax(10rem, 1fr);
+  }
+
+  @media screen and (max-width: 1080px) {
+    .hero-section {
+      grid-template-rows: 10vw 1fr;
+    }
+  }
+}
