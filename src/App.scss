@@ -15,6 +15,8 @@
     --text-40: 40px;
     --text-48: 48px;
     --text-56: 56px;
+
+    --cube-size: clamp(200px, 18vw, 300px);
   }
 
   html {
@@ -35,11 +37,15 @@
       'Open Sans',
       'Helvetica Neue',
       sans-serif;
-      // @apply bg-neutral-dark-500;
+    @apply bg-neutral-dark-300;
   }
 
   .big-text {
     font-size: clamp(var(--text-32), 5vw, var(--text-48)) !important;
+  }
+
+  .shadow-text {
+    text-shadow: 1px 1px 8px currentColor;
   }
 }
 
@@ -71,16 +77,50 @@
   .animate-forwards {
     animation-fill-mode: forwards;
   }
+
+  .skill {
+    .skill-description {
+      position: absolute;
+      bottom: 100%;
+      visibility: hidden;
+      color: white;
+      width: 15ch;
+      z-index: 10;
+      left: 0;
+      font-size: 12px;
+      translate: 0 0;
+
+      & > div {
+        @apply bg-neutral-light-400;
+      }
+
+      &::after {
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        content: '';
+        transform: rotateX(90deg);
+        background-color: inherit;
+        inset-inline: 0;
+      }
+    }
+
+    &:hover {
+      .skill-description {
+        visibility: visible;
+      }
+    }
+  }
 }
 
 @layer layout {
   .hero-section {
-    grid-auto-flow: column;
-    // grid-template-columns: auto-fill(minmax(50%, min-content)) minmax(10rem, 1fr);
+    grid-template-columns: 1fr var(--cube-size);
   }
 
   @media screen and (max-width: 1080px) {
     .hero-section {
+      grid-template-columns: 1fr;
       grid-template-rows: 10vw 1fr;
     }
   }

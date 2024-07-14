@@ -1,6 +1,12 @@
 .stage-cube-cont {
   container: stage / inline-size;
-  --size: clamp(200px, 15vw, 300px);
+  --size: var(--cube-size);
+
+  @media screen and (max-width: 1080px) {
+    & {
+      align-self: self-end;
+    }
+  }
 }
 
 .cubespinner {
@@ -13,18 +19,22 @@
   transform-origin: calc(var(--size) / 2) calc(var(--size) / 2);
   position: relative;
 
+  svg {
+    @apply shadow-violet drop-shadow-2xl;
+  }
+
   & > div {
     position: absolute;
     width: var(--size);
     height: var(--size);
     border: 1px solid #ccc;
-    @apply bg-green;
+    @apply bg-violet;
     @apply bg-opacity-[0.05];
     font-size: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 20px 0px lightyellow;
+    box-shadow: 0 0 20px 0px #661aee;
   }
   .face1 {
     transform: translateZ(calc(var(--size) / 2));
@@ -70,5 +80,22 @@
   }
   83% {
     transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
+
+.scroll-indicator::after {
+  content: '';
+  @apply absolute inset-x-[0] z-20 mx-auto my-4 aspect-square w-24 rounded-full bg-neutral-light-400;
+  animation: moveUpAndDown 1s ease-in-out infinite alternate-reverse;
+  animation-delay: 1s;
+  transform-origin: auto center;
+
+  @keyframes moveUpAndDown {
+    50% {
+      translate: 0% 120%;
+    }
+    100% {
+      animation-delay: 2s;
+    }
   }
 }
