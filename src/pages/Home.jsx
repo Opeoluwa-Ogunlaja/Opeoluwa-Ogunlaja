@@ -113,7 +113,7 @@ const Home = () => {
               </li>
             </ul>
             <div
-              className="grid pb-48"
+              className="grid gap-16 pb-48"
               style={{
                 gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 300px))',
                 placeItems: 'center',
