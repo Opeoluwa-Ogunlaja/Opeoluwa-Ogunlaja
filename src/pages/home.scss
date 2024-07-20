@@ -1,6 +1,7 @@
 .stage-cube-cont {
   container: stage / inline-size;
   --size: var(--cube-size);
+  margin-left: calc(calc(var(--cube-size)) * -1);
 
   @media screen and (max-width: 1080px) {
     & {
@@ -20,22 +21,21 @@
   position: relative;
 
   svg {
-    @apply shadow-violet drop-shadow-2xl;
+    @apply shadow-[currentColor] drop-shadow-2xl;
   }
 
-  & > div {
+  & > .face {
     position: absolute;
     width: var(--size);
     height: var(--size);
     border: 1px solid #ccc;
-    @apply bg-violet;
-    @apply bg-opacity-[0.05];
     font-size: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 20px 0px #661aee;
+    box-shadow: 0 0 20px 0px currentColor;
   }
+
   .face1 {
     transform: translateZ(calc(var(--size) / 2));
   }
@@ -85,7 +85,7 @@
 
 .scroll-indicator::after {
   content: '';
-  @apply absolute inset-x-[0] z-20 mx-auto my-4 aspect-square w-24 rounded-full bg-neutral-light-400;
+  @apply absolute inset-x-[0] z-20 mx-auto my-4 aspect-square w-24 rounded-full bg-neutral-1400;
   animation: moveUpAndDown 1s ease-in-out infinite alternate-reverse;
   animation-delay: 1s;
   transform-origin: auto center;

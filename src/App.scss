@@ -24,6 +24,8 @@
   }
 
   body {
+    min-height: 100vh;
+    min-height: 100dvh;
     font-family:
       Quicksand,
       system-ui,
@@ -37,9 +39,30 @@
       'Open Sans',
       'Helvetica Neue',
       sans-serif;
-    @apply bg-neutral-dark-500;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='100' height='100' fill='none' stroke='rgb(255 255 255 / 0.03)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
-    background-blend-mode: exclusion;
+    @apply bg-neutral-9500;
+    isolation: isolate;
+
+    &::before,
+    &::after {
+      position: fixed;
+      content: '';
+      width: 100%;
+      height: 100%;
+    }
+
+    &::before {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='100' height='100' fill='none' stroke='rgb(255 255 255 / 0.03)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+      z-index: -1;
+    }
+
+    &::after {
+      background-image: url('./assets/images/circle_pattern.png');
+      background-size: contain;
+      background-repeat: repeat;
+      z-index: 0;
+      opacity: 0.01;
+      background-size: 12px;
+    }
   }
 
   .big-text {
@@ -52,6 +75,28 @@
 }
 
 @layer framework {
+  .nav-link {
+    &:hover::after {
+      transform: scaleX(1);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      margin-top: 4px;
+      width: 100%;
+      height: 2px;
+      border: 3px ridge currentColor;
+      transform: scaleX(0);
+      rotate: 1deg;
+      transform-origin: right;
+      background-color: currentColor;
+      transition: all 0.3s ease-in-out;
+      border-bottom-left-radius: 18px;
+    }
+  }
+
   .contact-form-container {
     background-image: url(./assets/images/worldmap.png);
     background-size: contain;
@@ -100,7 +145,7 @@
       translate: 0 0;
 
       & > div {
-        @apply bg-neutral-light-400;
+        @apply bg-neutral-1400;
       }
 
       &::after {
@@ -130,7 +175,11 @@
   @media screen and (max-width: 1080px) {
     .hero-section {
       grid-template-columns: 1fr;
-      grid-template-rows: 10vw 1fr;
+      grid-template-rows: max-content 1fr;
+      place-items: center;
+      place-content: center;
+      gap: 3rem;
+      inset-inline: 0;
     }
   }
 }

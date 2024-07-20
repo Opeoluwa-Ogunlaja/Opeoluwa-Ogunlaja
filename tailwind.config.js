@@ -7,6 +7,7 @@ export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     screens: {
+      fold: '352px',
       sm: '480px',
       md: '768px',
       lg: '976px',
@@ -19,18 +20,16 @@ export default {
       white: '#FFFFFF',
       snow: '#FFFAFA',
       gray: '#A3A19F',
-      'neutral-light': {
-        100: '#F2F2F3',
-        200: '#BAAFCF',
-        300: '#0E1D54',
-        400: '#262338'
-      },
-      'neutral-dark': {
-        100: '#F7F3EA',
-        200: '#60798A',
-        300: '#15273C',
-        400: '#1E2C33',
-        500: '#020408'
+      neutral: {
+        1100: '#F2F2F3',
+        1200: '#BAAFCF',
+        1300: '#0E1D54',
+        1400: '#262338',
+        9100: '#F7F3EA',
+        9200: '#60798A',
+        9300: '#15273C',
+        9400: '#1E2C33',
+        9500: '#020408'
       }
     },
     spacing: {

@@ -10,11 +10,11 @@ import { twMerge } from 'tailwind-merge'
  */
 
 const button = cva(
-  'cta-btn p-12 font-semibold rounded-sm text-16 font-axiforma transition-all box-content shadow-md',
+  'cta-btn p-12 font-semibold rounded-sm max-lg:text-14 text-16 font-axiforma transition-all shadow-md',
   {
     variants: {
       color: {
-        primary: 'bg-green text-neutral-dark-500 primary',
+        primary: 'bg-green text-neutral-9500 primary',
         secondary: 'bg-[transparent] text-green border-2 border-green secondary'
       }
     },

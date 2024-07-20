@@ -1,22 +1,28 @@
+import { cva } from 'class-variance-authority'
+import clsx from 'clsx'
 import { NavLink } from 'react-router-dom'
+import { twMerge } from 'tailwind-merge'
 
 const navlink = cva(
-    'nav-link font-medium text-16 font-quicksand',
-    {
-      variants: {
-        color: {
-          light: 'text-neutral-dark-200',
-          dark: 'text-'
-        }
-      },
-      defaultVariants: {
-        color: 'purple'
-      }
-    }
-  )
-  
-  const NavLink = ({ color, children, className }) => {
-    return <NavLink className={ () => twMerge(navlink({ color }), '',  className)}>{children}</NavLink>
-  }
+  'nav-link relative text-16 max-sm:text-14 font-quicksand flex items-center text-pretty text-center text-neutral-1200 text-neutral-9200 transition-all hover:dark:text-purple hover:text-green'
+)
 
-export default NavLink
+const Navlink = ({ children, className, to, activeClass }) => {
+  const active = 'dark:text-purple text-green'
+  return (
+    <NavLink
+      to={to}
+      className={({ isActive }) => {
+        return twMerge(
+          navlink({}),
+          clsx({ [twMerge(active, activeClass, 'after:scale-100')]: isActive }),
+          className
+        )
+      }}
+    >
+      {children}
+    </NavLink>
+  )
+}
+
+export default Navlink
