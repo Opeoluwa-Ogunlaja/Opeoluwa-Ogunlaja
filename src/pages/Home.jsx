@@ -30,9 +30,9 @@ const Home = () => {
       <main className="mt-64 max-lg:px-24 lg:px-64">
         <section className="hero-section relative grid h-fit">
           <div className="flex flex-col gap-24 font-axiforma">
-            <div className="big-text inline-block text-white">
+            <div className="big-text inline-block text-center text-white">
               I'm <strong className="scale-105  text-violet">Opeoluwa</strong>, a{' '}
-              <h3 className="big-text shadow-text inline origin-top-left scale-105 align-baseline text-green">
+              <h3 className="big-text shadow-text origin-top-left scale-105 align-baseline text-green lg:inline">
                 Web developer
               </h3>
             </div>
