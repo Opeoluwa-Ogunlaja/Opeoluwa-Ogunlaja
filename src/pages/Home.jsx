@@ -17,26 +17,29 @@ const Project = () => {
 const Home = () => {
   return (
     <>
-      <header className="max-fold:p-12 flex items-center max-lg:p-24 lg:px-24 lg:py-16">
+      <header className="relative flex items-center max-lg:p-24 max-fold:p-12 lg:px-64 lg:py-32">
         <div className="logo flex items-center text-green">
           <FullLogo className="aspect-auto w-128 lg:w-auto" />
         </div>
-        <div className="ml-auto flex items-center gap-16 font-quicksand">
+        <div className="z-30 ml-auto flex items-center gap-16 font-quicksand transition-all max-lg:rounded-lg max-sm:absolute max-sm:inset-x-[0] max-sm:mt-128 max-sm:w-max max-sm:-translate-x-24 max-sm:translate-y-24 max-sm:flex-col max-sm:bg-neutral-1400 max-sm:px-32 max-sm:py-16">
           <Navlink to="/">Home</Navlink>
           <Navlink to="/home">About</Navlink>
           <Navlink to="/home">Contact Us</Navlink>
         </div>
+        <button className="ml-auto text-xl text-white max-sm:visible sm:sr-only sm:invisible">
+          &#9776;
+        </button>
       </header>
       <main className="mt-64 max-lg:px-24 lg:px-64">
         <section className="hero-section relative grid h-fit">
           <div className="flex flex-col gap-24 font-axiforma">
-            <div className="big-text inline-block text-center text-white">
+            <div className="big-text inline-block text-white max-lg:text-center">
               I'm <strong className="scale-105  text-violet">Opeoluwa</strong>, a{' '}
-              <h3 className="big-text shadow-text origin-top-left scale-105 align-baseline text-green lg:inline">
+              <h3 className="big-text shadow-text origin-top-left align-baseline text-green lg:inline lg:scale-105">
                 Web developer
               </h3>
             </div>
-            <p className="max-w-[70ch] font-quicksand text-white max-lg:text-14 max-sm:text-12">
+            <p className="max-w-[70ch] font-quicksand text-white max-lg:text-center max-lg:text-14 max-sm:text-12">
               I'm a passionate full-stack developer with 3+ years of experience crafting engaging
               and impactful web experiences. From backend systems to pixel-perfect front-end design,
               I thrive on tackling challenges and delivering solutions that meet user needs and
