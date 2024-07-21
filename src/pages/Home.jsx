@@ -21,7 +21,7 @@ const Home = () => {
         <div className="logo flex items-center text-green">
           <FullLogo className="aspect-auto w-128 lg:w-auto" />
         </div>
-        <div className="z-30 ml-auto flex items-center gap-16 font-quicksand transition-all max-lg:rounded-lg max-sm:absolute max-sm:inset-x-[0] max-sm:mt-128 max-sm:w-max max-sm:-translate-x-24 max-sm:translate-y-24 max-sm:flex-col max-sm:bg-neutral-1400 max-sm:px-32 max-sm:py-16">
+        <div className="z-30 ml-auto flex items-center gap-16 font-quicksand transition max-lg:rounded-lg max-sm:absolute max-sm:inset-x-[0] max-sm:mt-128 max-sm:w-max max-sm:-translate-x-24 max-sm:translate-y-24 max-sm:flex-col max-sm:bg-neutral-1400 max-sm:px-32 max-sm:py-16">
           <Navlink to="/">Home</Navlink>
           <Navlink to="/home">About</Navlink>
           <Navlink to="/home">Contact Us</Navlink>
