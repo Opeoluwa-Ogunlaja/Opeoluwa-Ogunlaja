@@ -75,6 +75,10 @@
 }
 
 @layer framework {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, 250px);
+  }
+
   .nav-link {
     &:hover::after {
       transform: scaleX(1);
@@ -162,7 +166,9 @@
       }
     }
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:focus-within {
       .skill-description {
         visibility: visible;
         opacity: 1;

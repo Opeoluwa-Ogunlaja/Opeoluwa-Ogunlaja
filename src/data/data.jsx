@@ -17,3 +17,27 @@ export const skills = [
     subtitle: 'A Javascript library for building single page applications'
   }
 ]
+
+export const projects = [
+  {
+    image: '/logo-image.png',
+    title: 'Mindmaze',
+    description:
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptate officia nesciunt,tempore ipsam temporibus sequi',
+    tags: []
+  },
+  {
+    image: '/logo-image.png',
+    title: 'Mindmaze',
+    description:
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptate officia nesciunt,tempore ipsam temporibus sequi',
+    tags: []
+  },
+  {
+    image: '/logo-image.png',
+    title: 'Mindmaze',
+    description:
+      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptate officia nesciunt,tempore ipsam temporibus sequi',
+    tags: []
+  }
+]
