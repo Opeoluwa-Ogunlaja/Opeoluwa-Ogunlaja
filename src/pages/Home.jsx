@@ -70,7 +70,7 @@ const Home = () => {
               }
             }
           }}
-          className="hero-section relative grid h-fit"
+          className="hero-section relative grid h-fit max-lg:mb-[356px]"
         >
           <div className="flex flex-col gap-24 font-axiforma">
             <div className="big-text inline-block text-white max-lg:text-center">
@@ -127,12 +127,14 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="scroll-indicator m-0 bottom-0 absolute z-10 -mb-64 aspect-[1/2] w-32 self-end justify-self-center rounded-[9999px] border border-neutral-1200 shadow-inner after:bg-green"></div>
+          <div className="scroll-indicator m-0 bottom-0 absolute z-10 aspect-[1/2] w-32 self-end justify-self-center rounded-[9999px] border border-neutral-1200 shadow-inner after:bg-green max-lg:-mb-[312px] lg:-mb-64"></div>
         </motion.section>
-        <section className="skills-section mt-128">
+        <section className="skills-section max-lg:mt-192 lg:mt-128">
           <SectionHeading
             heading={'Skills'}
-            subHeading={'Some of my executive skills for your viewing pleasure'}
+            subHeading={
+              'Over the years, I have gained mastery of various tools and languages related to web development. A few of many are shown below'
+            }
           />
           <div className="skills-grid mt-24 flex w-3/5 flex-wrap content-start gap-16">
             {skills.map((skill, i) => {

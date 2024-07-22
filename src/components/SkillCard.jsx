@@ -8,7 +8,7 @@ const SkillCard = ({ icon: Icon, title, subtitle }) => {
       </button>
       <div className="skill-description inset-x-1/2 rounded-sm p-8">
         <h3 className="font-axiforma text-base text-white underline">{title}</h3>
-        <p className="text-neutral-1100">{subtitle}</p>
+        <p className="max-w-[50ch] text-neutral-1100">{subtitle}</p>
       </div>
     </div>
   )
