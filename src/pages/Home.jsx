@@ -18,6 +18,8 @@ import SkillCard from '../components/SkillCard'
 import { motion } from 'framer-motion'
 import ProjectCard from '../components/ProjectCard'
 import Project_Section from '../home_sections/Project_Section'
+import Experience from '../components/Timeline'
+import Experience_Section from './../home_sections/Experience_Section'
 
 const Home = () => {
   return (
@@ -142,7 +144,14 @@ const Home = () => {
         </section>
 
         <Project_Section />
+
+        <Experience_Section />
       </main>
+      <footer className="mt-96 bg-neutral-9300 max-sm:rounded-t-full">
+        <span className="text-green">
+          <FullLogo className="w-128" />
+        </span>
+      </footer>
     </>
   )
 }

@@ -1,18 +1,16 @@
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
-import ReactLogo from '../assets/icons/react.svg'
-
 import 'react-vertical-timeline-component/style.min.css'
+import { experience } from '../data/data'
 
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: '#1d1836',
+        background: '#1e2c33cc',
         color: '#fff'
       }}
-      contentArrowStyle={{ borderRight: '7px solid  #232631' }}
+      contentArrowStyle={{ borderRight: '7px solid  #1e2c33cc' }}
       date={experience.date}
-      //   iconStyle={{ background: experience.iconBg }}
       icon={
         <div className="flex h-full w-full items-center justify-center">
           <img
@@ -23,18 +21,18 @@ const ExperienceCard = ({ experience }) => {
         </div>
       }
     >
-      <div>
-        <h3 className="text-[24px] font-bold text-white">{experience.title}</h3>
-        <p className="text-secondary text-[16px] font-semibold" style={{ margin: 0 }}>
+      <div className="font-axiforma">
+        <h3 className="text-lg font-bold text-white">{experience.title}</h3>
+        <p className="font-semibold text-neutral-9200" style={{ margin: 0 }}>
           {experience.company_name}
         </p>
       </div>
 
-      <ul className="mt-5 ml-5 space-y-2 list-disc">
+      <ul className="experience-points-lists ml-5 mt-12 space-y-8 px-16">
         {experience.points.map((point, index) => (
           <li
-            key={`experience-point-${index}`}
-            className="text-white-100 pl-1 text-[14px] tracking-wider"
+            key={`experience-point${point.title}-${index}`}
+            className="pl-1 text-sm text-neutral-1200"
           >
             {point}
           </li>
@@ -49,17 +47,9 @@ const Experience = () => {
     <>
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
-          {new Array(5)
-            .fill({
-              icon: ReactLogo,
-              date: 'today',
-              company_name: 'Opeoluwa',
-              title: 'manager',
-              points: ['Shey you dey whine me ni?']
-            })
-            .map((experience, index) => (
-              <ExperienceCard key={`experience-${index}`} experience={experience} />
-            ))}
+          {experience.map((experience, index) => (
+            <ExperienceCard key={`experience-${index}`} experience={experience} />
+          ))}
         </VerticalTimeline>
       </div>
     </>

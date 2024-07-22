@@ -35,7 +35,7 @@ const Project_Section = () => {
           </li>
         </ul>
       </div>
-      <div className="projects-grid mt-24 grid flex-1 place-content-center gap-16">
+      <div className="projects-grid place-items-start-center mt-24 grid flex-1 place-content-center gap-16">
         {projects.map((project, i) => {
           return <ProjectCard key={project.title + i} {...project} />
         })}

@@ -41,3 +41,28 @@ export const projects = [
     tags: []
   }
 ]
+
+export const experience = [
+  {
+    icon: '/vite.svg',
+    date: '2021 - Present',
+    company_name: 'Upwork',
+    title: 'Fullstack Developer',
+    points: [
+      'Developing and maintaining web applications using React.js and oher related web technologies',
+      'Building web applications for different niches and businesses',
+      'Giving multiple businesses an online presence'
+    ]
+  },
+  {
+    icon: '/vite.svg',
+    date: '2021 - Present',
+    company_name: 'Upwork',
+    title: 'Fullstack Developer',
+    points: [
+      'Developing and maintaining web applications using React.js and oher related web technologies',
+      'Building web applications for different niches and businesses',
+      'Giving multiple businesses an online presence'
+    ]
+  }
+]
