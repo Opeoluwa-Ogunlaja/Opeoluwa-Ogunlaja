@@ -135,33 +135,38 @@
   .skill {
     .skill-description {
       position: absolute;
-      bottom: 100%;
       visibility: hidden;
+      opacity: 0;
+      bottom: 100%;
       color: white;
-      width: 15ch;
+      @apply bg-neutral-1400;
+      width: 20ch;
       z-index: 10;
-      left: 0;
       font-size: 12px;
-      translate: 0 0;
-
-      & > div {
-        @apply bg-neutral-1400;
-      }
+      transition: all 0.3s ease;
+      margin-bottom: 0.875rem;
+      transform: scale(0.95) translateY(1rem) translateX(-49%);
 
       &::after {
+        --_caret-width: 12px;
         position: absolute;
-        z-index: -1;
-        bottom: 0;
+        z-index: 8;
+        bottom: calc((var(--_caret-width) / -2));
         content: '';
-        transform: rotateX(90deg);
-        background-color: inherit;
-        inset-inline: 0;
+        width: var(--_caret-width);
+        inset-inline: 50%;
+        aspect-ratio: 1;
+        rotate: 45deg;
+        translate: -50% 0;
+        background: inherit;
       }
     }
 
     &:hover {
       .skill-description {
         visibility: visible;
+        opacity: 1;
+        transform: scale(1) translateY(0) translateX(-50%);
       }
     }
   }

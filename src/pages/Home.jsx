@@ -12,6 +12,10 @@ import { twMerge } from 'tailwind-merge'
 import useMediaQuery from '../hooks/useMediaQuery'
 import { useToggle } from '../hooks/useToggle'
 import clsx from 'clsx'
+import SectionHeading from '../components/SectionHeading'
+import { skills } from '../data/data'
+import SkillCard from '../components/SkillCard'
+import { motion } from 'framer-motion'
 
 const Project = () => {
   return <div className=""></div>
@@ -27,7 +31,7 @@ const Home = () => {
         {(() => {
           const largeScreen = useMediaQuery('(max-width:976px)')
           const [isOpen, toggle] = useToggle(false)
-          console.log(isOpen)
+
           return (
             <>
               <div
@@ -51,7 +55,23 @@ const Home = () => {
         })()}
       </header>
       <main className="mt-64 max-lg:px-24 lg:px-64">
-        <section className="hero-section relative grid h-fit">
+        <motion.section
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 1, scale: 0 },
+            visible: {
+              opacity: 1,
+              scale: 1,
+              transition: {
+                delayChildren: 0.3,
+                staggerChildren: 0.2,
+                bounce: true
+              }
+            }
+          }}
+          className="hero-section relative grid h-fit"
+        >
           <div className="flex flex-col gap-24 font-axiforma">
             <div className="big-text inline-block text-white max-lg:text-center">
               I'm <strong className="scale-105  text-violet">Opeoluwa</strong>, a{' '}
@@ -105,6 +125,19 @@ const Home = () => {
                 )
               })()}
             </div>
+          </div>
+
+          <div className="scroll-indicator m-0 bottom-0 absolute z-10 -mb-64 aspect-[1/2] w-32 self-end justify-self-center rounded-[9999px] border border-neutral-1200 shadow-inner after:bg-green"></div>
+        </motion.section>
+        <section className="skills-section mt-128">
+          <SectionHeading
+            heading={'Skills'}
+            subHeading={'Some of my executive skills for your viewing pleasure'}
+          />
+          <div className="skills-grid mt-24 flex w-3/5 flex-wrap content-start gap-16">
+            {skills.map((skill, i) => {
+              return <SkillCard {...skill} key={skill.title} />
+            })}
           </div>
         </section>
       </main>
