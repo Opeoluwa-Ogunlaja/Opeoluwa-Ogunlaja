@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProjectCard = ({ image, title, description, tags }) => {
   return (
-    <div className="rounded-sm bg-neutral-9400 bg-opacity-80 p-12 transition-transform hover:scale-105">
+    <div className="cursor-pointer rounded-sm bg-neutral-9400 bg-opacity-80 p-12 transition-transform hover:scale-105">
       <div className="grid h-128 place-content-center rounded-sm bg-green">
         <img src={image} alt="project image" />
       </div>

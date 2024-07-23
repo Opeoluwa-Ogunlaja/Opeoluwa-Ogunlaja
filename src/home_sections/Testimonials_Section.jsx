@@ -6,7 +6,7 @@ import { testimonials } from '../data/data'
 
 const Testimonials_Section = () => {
   return (
-    <section className="testimonials-section mx-auto mt-96 rounded-lg bg-neutral-9400 p-24 sm:w-3/5 sm:min-w-[720px] sm:px-64 sm:py-32">
+    <section className="testimonials-section mx-auto mt-96 rounded-lg bg-neutral-9400 p-24 sm:w-7/12 sm:min-w-[720px] sm:px-64 sm:py-32">
       <SectionHeading
         heading={'Testimonials'}
         subHeading={'What my previous clients have to say about me'}
