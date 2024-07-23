@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import React, { useEffect, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
@@ -9,6 +10,7 @@ export const InfiniteMovingCards = ({
   className,
   listClass,
   itemClass,
+  innerShadow = true,
   renderedElement: Elem
 }) => {
   const containerRef = React.useRef()
@@ -60,8 +62,12 @@ export const InfiniteMovingCards = ({
       ref={containerRef}
       className={twMerge(
         // max-w-7xl to w-screen
-        'scroller relative z-20 w-full overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
-        className
+        'scroller relative z-20 w-full overflow-hidden',
+        className,
+        clsx({
+          ['[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]']:
+            !innerShadow
+        })
       )}
     >
       <ul
@@ -78,7 +84,8 @@ export const InfiniteMovingCards = ({
           <li
             className={twMerge('', itemClass)}
             style={{
-              backgroundColor: 'linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)'
+              backgroundColor:
+                !innerShadow && 'linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)'
             }}
             key={idx}
           >
