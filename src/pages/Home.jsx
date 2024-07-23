@@ -150,12 +150,12 @@ const Home = () => {
 
         <Testimonials_Section />
       </main>
-      <footer className="mt-96 flex gap-24 bg-neutral-9400 text-white max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:rounded-t-[64px] max-sm:p-48 sm:justify-start sm:rounded-t-[96px] sm:p-64">
+      <footer className="relative mt-96 flex gap-24 bg-neutral-9400 text-white max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:rounded-t-[64px] max-sm:p-48 max-sm:pb-64 sm:justify-start sm:rounded-t-[96px] sm:p-64">
         <span className="text-green">
           <FullLogo className="w-192" />
         </span>
         <div className="flex flex-col gap-8 text-center max-sm:justify-center">
-          <h4>Connect</h4>
+          <h4 className="text-neutral-9200">Connect</h4>
           <ul>
             <li>
               <a href="">LinkedIn</a>
@@ -168,7 +168,7 @@ const Home = () => {
             </li>
           </ul>
         </div>
-        <ul className="flex gap-8 max-sm:justify-center sm:ml-auto">
+        <ul className="flex gap-8 max-sm:mt-24 max-sm:justify-center sm:ml-auto">
           <li>
             <a href="">FB</a>
           </li>
@@ -176,6 +176,14 @@ const Home = () => {
             <a href="">IG</a>
           </li>
         </ul>
+        <div className="absolute inset-x-[0] bottom-32 flex justify-center gap-24 max-sm:mt-16">
+          <Navlink to="/">Home</Navlink>
+          <Navlink to="/home">About</Navlink>
+        </div>
+        <span className="absolute inset-x-[0] bottom-[0] text-center text-xs">
+          Copyright &copy; {new Date().getFullYear()}.{' '}
+          <strong className="text-green">Opeoluwa</strong>
+        </span>
       </footer>
     </>
   )
