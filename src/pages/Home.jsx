@@ -150,7 +150,7 @@ const Home = () => {
 
         <Testimonials_Section />
       </main>
-      <footer className="relative mt-96 flex gap-24 bg-neutral-9400 text-white max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:rounded-t-[64px] max-sm:p-48 max-sm:pb-64 sm:justify-start sm:rounded-t-[96px] sm:p-64">
+      <footer className="relative mt-96 flex gap-24 bg-neutral-9400 bg-opacity-80 text-white max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:rounded-t-[64px] max-sm:p-48 max-sm:pb-64 sm:justify-start sm:rounded-t-[96px] sm:p-64">
         <span className="text-green">
           <FullLogo className="w-192" />
         </span>
