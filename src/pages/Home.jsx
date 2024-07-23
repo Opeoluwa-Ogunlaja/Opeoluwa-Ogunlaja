@@ -13,7 +13,7 @@ import useMediaQuery from '../hooks/useMediaQuery'
 import { useToggle } from '../hooks/useToggle'
 import clsx from 'clsx'
 import SectionHeading from '../components/SectionHeading'
-import { skills } from '../data/data'
+import { characteristics, skills } from '../data/data'
 import SkillCard from '../components/SkillCard'
 import { motion } from 'framer-motion'
 import ProjectCard from '../components/ProjectCard'
@@ -21,6 +21,8 @@ import Project_Section from '../home_sections/Project_Section'
 import Experience from '../components/Timeline'
 import Experience_Section from './../home_sections/Experience_Section'
 import Testimonials_Section from '../home_sections/Testimonials_Section'
+import { InfiniteMovingCards } from '../components/InfiniteCards'
+import CharacterCard from '../components/CharacterCard'
 
 const Home = () => {
   return (
@@ -91,6 +93,15 @@ const Home = () => {
                 skills to create innovative and impactful solutions.
               </span>
             </p>
+            <div className="relative max-lg:mx-auto max-lg:w-[325px] lg:w-[450px]">
+              <InfiniteMovingCards
+                items={characteristics}
+                innerShadow={false}
+                direction="left"
+                speed="fast"
+                renderedElement={CharacterCard}
+              />
+            </div>
             <div className="flex gap-8 max-lg:mx-auto">
               <Button className={'w-fit'}>Get in Touch</Button>
               <Button className={'w-fit'} color={'secondary'}>

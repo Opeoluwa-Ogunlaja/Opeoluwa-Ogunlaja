@@ -102,3 +102,22 @@ export const testimonials = [
       'I thought the website for our product would be impossible to build . Till I met Opeoluwa and he proved me wrong'
   }
 ]
+
+export const characteristics = [
+  {
+    icon: ReactLogo,
+    character: 'Problem Solver'
+  },
+  {
+    icon: ReactLogo,
+    character: 'Problem Solver'
+  },
+  {
+    icon: ReactLogo,
+    character: 'Problem Solver'
+  },
+  {
+    icon: ReactLogo,
+    character: 'Problem Solver'
+  }
+]
