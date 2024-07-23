@@ -20,6 +20,7 @@ import ProjectCard from '../components/ProjectCard'
 import Project_Section from '../home_sections/Project_Section'
 import Experience from '../components/Timeline'
 import Experience_Section from './../home_sections/Experience_Section'
+import Testimonials_Section from '../home_sections/Testimonials_Section'
 
 const Home = () => {
   return (
@@ -146,6 +147,8 @@ const Home = () => {
         <Project_Section />
 
         <Experience_Section />
+
+        <Testimonials_Section />
       </main>
       <footer className="mt-96 bg-neutral-9300 max-sm:rounded-t-full">
         <span className="text-green">

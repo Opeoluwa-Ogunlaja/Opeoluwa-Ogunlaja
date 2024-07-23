@@ -3,16 +3,19 @@ import { ReactLogo } from '../assets/icons'
 export const skills = [
   {
     icon: ReactLogo,
+    type: 'Developer Tool',
     title: 'React',
     subtitle: 'A Javascript library for building single page applications'
   },
   {
     icon: ReactLogo,
+    type: 'Developer Tool',
     title: 'Google Cloud',
     subtitle: 'A Javascript library for building single page applications'
   },
   {
     icon: ReactLogo,
+    type: 'Programming language',
     title: 'CSS',
     subtitle: 'A Javascript library for building single page applications'
   }
@@ -64,5 +67,35 @@ export const experience = [
       'Building web applications for different niches and businesses',
       'Giving multiple businesses an online presence'
     ]
+  }
+]
+
+export const testimonials = [
+  {
+    name: 'John Doe',
+    image: 'https://unsplash.com/photos/man-wearing-henley-top-portrait-7YVZYZeITc8',
+    role: 'CTO at Acne.co',
+    organisation: 'Agency',
+    title: 'Exceeded Expectations',
+    review:
+      'I thought the website for our product would be impossible to build . Till I met Opeoluwa and he proved me wrong'
+  },
+  {
+    name: 'John Doe',
+    image: 'https://unsplash.com/photos/man-wearing-henley-top-portrait-7YVZYZeITc8',
+    role: 'CTO at Acne.co',
+    organisation: 'Agency',
+    title: 'Exceeded Expectations',
+    review:
+      'I thought the website for our product would be impossible to build . Till I met Opeoluwa and he proved me wrong'
+  },
+  {
+    name: 'John Doe',
+    image: 'https://unsplash.com/photos/man-wearing-henley-top-portrait-7YVZYZeITc8',
+    role: 'CTO at Acne.co',
+    organisation: 'Agency',
+    title: 'Exceeded Expectations',
+    review:
+      'I thought the website for our product would be impossible to build . Till I met Opeoluwa and he proved me wrong'
   }
 ]

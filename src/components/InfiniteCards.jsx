@@ -6,7 +6,10 @@ export const InfiniteMovingCards = ({
   direction = 'left',
   speed = 'fast',
   pauseOnHover = true,
-  className
+  className,
+  listClass,
+  itemClass,
+  renderedElement: Elem
 }) => {
   const containerRef = React.useRef()
   const scrollerRef = React.useRef()
@@ -67,48 +70,24 @@ export const InfiniteMovingCards = ({
           // change gap-16
           ' flex w-max min-w-full shrink-0 flex-nowrap gap-16 py-4',
           start && 'animate-scroll',
-          pauseOnHover && 'hover:[animation-play-state:paused]'
+          pauseOnHover && 'hover:[animation-play-state:paused]',
+          listClass
         )}
       >
         {items.map((item, idx) => (
           <li
-            //   change md:w-[450px] to md:w-[60vw] , px-8 py-6 to p-16, border-slate-700 to border-slate-800
-            className="rounded-2xl border-slate-800 p-5 relative w-[90vw] max-w-full
-             flex-shrink-0 border border-b-0 md:w-[60vw] md:p-16"
+            className={twMerge('', itemClass)}
             style={{
-              //   background:
-              //     "linear-gradient(180deg, var(--slate-800), var(--slate-900)", //remove this one
-              //   add these two
-              //   you can generate the color from here https://cssgradient.io/
-              background: 'rgb(4,7,29)',
               backgroundColor: 'linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)'
             }}
-            // change to idx cuz we have the same name
             key={idx}
           >
             <blockquote>
               <div
                 aria-hidden="true"
-                className="user-select-none -z-1 -left-0.5 -top-0.5 pointer-events-none absolute h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
+                className="user-select-none -z-1 -left-0.5 -top-0.5 pointer-events-none absolute"
               ></div>
-              {/* change text color, text-lg */}
-              <span className=" relative z-20 text-sm font-normal leading-[1.6] text-white md:text-lg">
-                {item.quote}
-              </span>
-              <div className="mt-6 relative z-20 flex flex-row items-center">
-                {/* add this div for the profile img */}
-                <div className="me-3">
-                  <img src="/vite.svg" alt="profile" />
-                </div>
-                <span className="gap-1 flex flex-col">
-                  {/* change text color, font-normal to font-bold, text-xl */}
-                  <span className="text-xl font-bold leading-[1.6] text-white">{item.name}</span>
-                  {/* change text color */}
-                  <span className=" text-white-200 text-sm font-normal leading-[1.6]">
-                    {item.title}
-                  </span>
-                </span>
-              </div>
+              {Elem && <Elem {...item} />}
             </blockquote>
           </li>
         ))}
