@@ -150,10 +150,32 @@ const Home = () => {
 
         <Testimonials_Section />
       </main>
-      <footer className="mt-96 bg-neutral-9300 max-sm:rounded-t-full">
+      <footer className="mt-96 flex gap-24 bg-neutral-9400 text-white max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:rounded-t-[64px] max-sm:p-48 sm:justify-start sm:rounded-t-[96px] sm:p-64">
         <span className="text-green">
-          <FullLogo className="w-128" />
+          <FullLogo className="w-192" />
         </span>
+        <div className="flex flex-col gap-8 text-center max-sm:justify-center">
+          <h4>Connect</h4>
+          <ul>
+            <li>
+              <a href="">LinkedIn</a>
+            </li>
+            <li>
+              <a href="">Twitter</a>
+            </li>
+            <li>
+              <a href="">Facebook</a>
+            </li>
+          </ul>
+        </div>
+        <ul className="flex gap-8 max-sm:justify-center sm:ml-auto">
+          <li>
+            <a href="">FB</a>
+          </li>
+          <li>
+            <a href="">IG</a>
+          </li>
+        </ul>
       </footer>
     </>
   )
