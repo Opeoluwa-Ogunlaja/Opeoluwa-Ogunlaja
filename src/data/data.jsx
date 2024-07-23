@@ -73,7 +73,8 @@ export const experience = [
 export const testimonials = [
   {
     name: 'John Doe',
-    image: 'https://unsplash.com/photos/man-wearing-henley-top-portrait-7YVZYZeITc8',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqac0kO5njric6qkMm718Qyv6G9G0WHx9BmA&s',
     role: 'CTO at Acne.co',
     organisation: 'Agency',
     title: 'Exceeded Expectations',
@@ -82,7 +83,8 @@ export const testimonials = [
   },
   {
     name: 'John Doe',
-    image: 'https://unsplash.com/photos/man-wearing-henley-top-portrait-7YVZYZeITc8',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqac0kO5njric6qkMm718Qyv6G9G0WHx9BmA&s',
     role: 'CTO at Acne.co',
     organisation: 'Agency',
     title: 'Exceeded Expectations',
@@ -91,7 +93,8 @@ export const testimonials = [
   },
   {
     name: 'John Doe',
-    image: 'https://unsplash.com/photos/man-wearing-henley-top-portrait-7YVZYZeITc8',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqac0kO5njric6qkMm718Qyv6G9G0WHx9BmA&s',
     role: 'CTO at Acne.co',
     organisation: 'Agency',
     title: 'Exceeded Expectations',

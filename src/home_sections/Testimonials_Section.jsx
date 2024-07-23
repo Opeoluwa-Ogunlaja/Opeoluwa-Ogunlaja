@@ -6,13 +6,12 @@ import { testimonials } from '../data/data'
 
 const Testimonials_Section = () => {
   return (
-    <section className="testimonials-section mx-auto mt-96 rounded-lg bg-neutral-9400 p-24 sm:w-3/5 sm:px-64 sm:py-32">
+    <section className="testimonials-section mx-auto mt-96 rounded-lg bg-neutral-9400 p-24 sm:w-3/5 sm:min-w-[720px] sm:px-64 sm:py-32">
       <SectionHeading
         heading={'Testimonials'}
         subHeading={'What my previous clients have to say about me'}
       />
-      <TestimonialCard {...testimonials[0]} />
-      <div className="rounded-md relative flex h-[50vh] flex-col items-center  justify-center overflow-hidden antialiased">
+      <div className="rounded-md relative mt-48 flex h-[50vh] flex-col items-center justify-center overflow-hidden antialiased">
         <InfiniteMovingCards
           items={testimonials}
           direction="right"
