@@ -4,18 +4,18 @@ import Button from '../components/Button'
 
 const Form_Section = () => {
   return (
-    <section className="form-section mt-192 flex flex-col items-center gap-64">
-      <h3 className="font-axiforma text-5xl text-white">
+    <section className="form-section mt-192 flex flex-col items-center max-sm:gap-24 sm:gap-64">
+      <h3 className="text-pretty text-center font-axiforma text-white max-sm:text-3xl sm:text-5xl">
         Need <strong className="text-green">help</strong> with something?
       </h3>
       <div className="form-grid grid place-content-around place-items-center gap-32">
-        <form className="grid min-w-[342px] gap-16">
+        <form className="grid gap-16 max-sm:w-full sm:min-w-[342px]">
           <TextField placeholder="Email" className="w-full" />
           <TextField placeholder="Name" className="w-full" />
           <TextAreaField placeholder="How may I help you?" className="w-full" />
-          <Button className="w-fit px-16">Contact Me</Button>
+          <Button className="px-16 max-sm:w-full sm:w-fit">Contact Me</Button>
         </form>
-        <div className="flex h-full min-w-[276px] flex-col items-center gap-32 self-stretch justify-self-stretch rounded-lg border border-green bg-neutral-9400 bg-opacity-40 px-16  py-32 font-axiforma">
+        <div className="flex h-full flex-col items-center gap-32 self-stretch justify-self-stretch rounded-lg border border-green bg-neutral-9400 bg-opacity-40 px-16 py-32  font-axiforma sm:min-w-[276px]">
           <strong className="text-center text-lg font-medium text-white">
             Here to help you build the best products
           </strong>
