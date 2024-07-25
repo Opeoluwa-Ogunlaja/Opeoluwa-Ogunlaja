@@ -9,7 +9,7 @@ const Project_Section = () => {
   const [filter, setFilter] = useState('')
   const tabButtonClassFn = bool =>
     twMerge(
-      'hover:bg-neutral-9400 py-4 rounded-full px-16 transition font-axiforma',
+      'hover:bg-neutral-9400 py-8 rounded-full px-24 transition font-axiforma',
       clsx({ ['underline bg-neutral-9400 text-green font-medium']: bool })
     )
   return (
@@ -35,7 +35,7 @@ const Project_Section = () => {
           </li>
         </ul>
       </div>
-      <div className="projects-grid mt-24 grid flex-1 place-content-center place-items-center gap-24">
+      <div className="projects-grid mt-24 grid flex-1 place-content-center gap-24">
         {projects.map((project, i) => {
           return <ProjectCard key={project.title + i} {...project} />
         })}

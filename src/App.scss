@@ -104,7 +104,7 @@
   }
 
   .projects-grid {
-    grid-template-columns: repeat(auto-fit, 250px);
+    grid-template-columns: repeat(auto-fit, 296px);
   }
 
   .nav-link {
@@ -126,6 +126,14 @@
       background-color: currentColor;
       transition: all 0.3s ease-in-out;
       border-bottom-left-radius: 18px;
+    }
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr min-content;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
     }
   }
 

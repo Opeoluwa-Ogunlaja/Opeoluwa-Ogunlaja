@@ -1,5 +1,6 @@
 import React from 'react'
 import TechPill from './TechPill'
+import { tagFromTitle } from '../data/data'
 
 const ProjectCard = ({ image, title, description, tags }) => {
   return (
@@ -11,8 +12,10 @@ const ProjectCard = ({ image, title, description, tags }) => {
         <h3 className="text-xl text-white">{title}</h3>
         <p className="text-sm text-gray">{description}</p>
       </div>
-      <div className="mt-32 flex flex-wrap gap-8">
-        <TechPill />
+      <div className="mt-32 flex flex-row-reverse flex-wrap justify-end gap-8">
+        {tags.map(tag => (
+          <TechPill key={tag} {...tagFromTitle(tag)} />
+        ))}
       </div>
     </div>
   )

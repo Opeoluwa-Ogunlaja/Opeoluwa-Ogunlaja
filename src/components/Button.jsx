@@ -24,8 +24,13 @@ const button = cva(
   }
 )
 
-const Button = ({ color, children, className }) => {
-  return <button className={twMerge(button({ color }), className)}>{children}</button>
+const Button = props => {
+  const { color, children, className, ...buttonProps } = props
+  return (
+    <button {...buttonProps} className={twMerge(button({ color }), className)}>
+      {children}
+    </button>
+  )
 }
 
 export default Button

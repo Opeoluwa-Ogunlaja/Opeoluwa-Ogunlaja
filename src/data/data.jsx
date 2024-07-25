@@ -1,6 +1,8 @@
 import {
   BookOpenIcon,
   BracketsCheckIcon,
+  GamePadIcon,
+  GlobeIcon,
   PuzzlePieceIcon,
   ReactLogo,
   UsersMultiIcon
@@ -33,21 +35,21 @@ export const projects = [
     title: 'Mindmaze',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptate officia nesciunt,tempore ipsam temporibus sequi',
-    tags: []
+    tags: ['react', 'game']
   },
   {
     image: '/logo-image.png',
     title: 'Mindmaze',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptate officia nesciunt,tempore ipsam temporibus sequi',
-    tags: []
+    tags: ['website']
   },
   {
     image: '/logo-image.png',
     title: 'Mindmaze',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptate officia nesciunt,tempore ipsam temporibus sequi',
-    tags: []
+    tags: ['website']
   }
 ]
 
@@ -124,10 +126,30 @@ export const characteristics = [
   },
   {
     icon: BookOpenIcon,
-    character: 'Constantly Learning'
+    character: 'Kaizen Mentality'
   },
   {
     icon: UsersMultiIcon,
     character: 'Team Player'
   }
 ]
+
+export const tags = [
+  {
+    icon: ReactLogo,
+    tagTitle: 'React'
+  },
+  {
+    icon: GamePadIcon,
+    tagTitle: 'Game'
+  },
+  {
+    icon: GlobeIcon,
+    tagTitle: 'Website'
+  }
+]
+
+export function tagFromTitle(title) {
+  const index = tags.findIndex(tag => tag.tagTitle.toLowerCase() == title.toLowerCase())
+  return { ...tags[(index, index)] }
+}
