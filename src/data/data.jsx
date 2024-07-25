@@ -1,4 +1,10 @@
-import { ReactLogo } from '../assets/icons'
+import {
+  BookOpenIcon,
+  BracketsCheckIcon,
+  PuzzlePieceIcon,
+  ReactLogo,
+  UsersMultiIcon
+} from '../assets/icons'
 
 export const skills = [
   {
@@ -105,19 +111,23 @@ export const testimonials = [
 
 export const characteristics = [
   {
-    icon: ReactLogo,
+    icon: PuzzlePieceIcon,
     character: 'Problem Solver'
   },
   {
-    icon: ReactLogo,
-    character: 'Problem Solver'
+    icon: PuzzlePieceIcon,
+    character: 'Effective Communicator'
   },
   {
-    icon: ReactLogo,
-    character: 'Problem Solver'
+    icon: BracketsCheckIcon,
+    character: 'Skilled Developer'
   },
   {
-    icon: ReactLogo,
-    character: 'Problem Solver'
+    icon: BookOpenIcon,
+    character: 'Constantly Learning'
+  },
+  {
+    icon: UsersMultiIcon,
+    character: 'Team Player'
   }
 ]

@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 const SkillCard = ({ icon: Icon, title, subtitle, type }) => {
   return (
     <div className="skill relative" key={title}>
-      <button className="flex aspect-square w-48  items-center justify-center rounded-sm bg-neutral-1400 bg-opacity-90">
+      <button className="flex aspect-square w-48  items-center justify-center rounded-sm bg-neutral-1300 bg-opacity-70">
         <Icon className={'aspect-square w-32'} />
       </button>
       <motion.div className={twMerge('skill-description inset-x-1/2 rounded-sm p-8', clsx())}>

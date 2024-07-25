@@ -1,7 +1,6 @@
-import { useRef } from "react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react"
 
-export function useUpdateEffect(callback, depenndencies){
+export const useUpdateEffect = (callback, dependencies) => {
     const renderedBefore = useRef(false);
 
     useEffect(() => {
@@ -10,5 +9,5 @@ export function useUpdateEffect(callback, depenndencies){
             return
         }
         callback()
-    }, [...depenndencies])
+    }, [...dependencies, callback])
 }

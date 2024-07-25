@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-export function useEventListener(eventType, callback, element, defaultToWindows = true) {
+export function useEventListener(eventType, callback, element = window) {
   const callbackRef = useRef(callback)
 
   useEffect(() => {
@@ -8,22 +8,12 @@ export function useEventListener(eventType, callback, element, defaultToWindows 
   }, [callback])
 
   useEffect(() => {
+    if (element == null) return
+
     const handler = e => callbackRef.current(e)
 
-    if (element == null || element == undefined) {
-      if (defaultToWindows == true) {
-        window.addEventListener(eventType, handler)
-      } else {
-        return
-      }
-    } else if (element != null) {
-      element.addEventListener(eventType, handler)
-    }
+    element.addEventListener(eventType, handler)
 
-    return () => {
-      if (element) {
-        element.removeEventListener(eventType, handler)
-      }
-    }
-  }, [])
+    return () => element.removeEventListener(eventType, handler)
+  }, [eventType, element])
 }

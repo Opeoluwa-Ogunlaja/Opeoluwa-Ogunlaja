@@ -75,6 +75,10 @@
     }
   }
 
+  section {
+    margin-inline: auto;
+  }
+
   .big-text {
     font-size: clamp(var(--text-32), 5vw, var(--text-48)) !important;
   }
@@ -85,6 +89,10 @@
 }
 
 @layer framework {
+  .form-section {
+    grid-template-columns: max-content min-content;
+  }
+
   .experience-points-lists {
     li {
       @apply pl-8;

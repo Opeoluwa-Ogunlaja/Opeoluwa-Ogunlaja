@@ -23,13 +23,14 @@ import Experience_Section from './../home_sections/Experience_Section'
 import Testimonials_Section from '../home_sections/Testimonials_Section'
 import { InfiniteMovingCards } from '../components/InfiniteCards'
 import CharacterCard from '../components/CharacterCard'
+import Form_Section from '../home_sections/Form_Section'
 
 const Home = () => {
   return (
     <>
       <header className="relative flex items-center max-lg:p-24 max-fold:p-12 lg:px-64 lg:py-32">
         <div className="logo flex items-center text-green">
-          <FullLogo className="aspect-auto w-128 lg:w-auto" />
+          <FullLogo className="aspect-auto w-192 scale-90 lg:w-auto" />
         </div>
         {(() => {
           const largeScreen = useMediaQuery('(max-width:976px)')
@@ -77,7 +78,7 @@ const Home = () => {
         >
           <div className="flex flex-col gap-24 font-axiforma">
             <div className="big-text inline-block text-white max-lg:text-center">
-              I'm <strong className="scale-105  text-violet">Opeoluwa</strong>, a{' '}
+              I'm <strong className="scale-105 text-violet">Opeoluwa</strong>, a{' '}
               <h3 className="big-text shadow-text origin-top-left align-baseline text-green lg:inline lg:scale-105">
                 Web developer
               </h3>
@@ -93,12 +94,13 @@ const Home = () => {
                 skills to create innovative and impactful solutions.
               </span>
             </p>
-            <div className="relative max-lg:mx-auto max-lg:w-[325px] lg:w-[450px]">
+            <div className="relative max-lg:mx-auto max-lg:w-[325px] lg:w-[470px]">
               <InfiniteMovingCards
                 items={characteristics}
                 innerShadow={false}
                 direction="left"
-                speed="fast"
+                speed="normal"
+                listClass={'gap-8'}
                 renderedElement={CharacterCard}
               />
             </div>
@@ -160,6 +162,8 @@ const Home = () => {
         <Experience_Section />
 
         <Testimonials_Section />
+
+        <Form_Section />
       </main>
       <footer className="relative mt-96 flex gap-24 bg-neutral-9400 bg-opacity-80 text-white max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:rounded-t-[64px] max-sm:p-48 max-sm:pb-64 sm:justify-start sm:rounded-t-[96px] sm:p-64">
         <span className="text-green">

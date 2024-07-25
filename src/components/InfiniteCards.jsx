@@ -1,6 +1,31 @@
 import clsx from 'clsx'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef, forwardRef, useCallback } from 'react'
 import { twMerge } from 'tailwind-merge'
+import { useSwipe } from '../hooks/useSwipe'
+import { useTimeout } from '../hooks/useTimeout'
+
+const Scroller = forwardRef(({ children, start, pauseOnHover, listClass }, ref) => {
+  const swipeCallback = useCallback(e => {
+    const elem = ref.current
+  })
+
+  useSwipe(ref.current, swipeCallback)
+
+  return (
+    <ul
+      ref={ref}
+      className={twMerge(
+        // change gap-16
+        ' flex w-max min-w-full shrink-0 flex-nowrap gap-16 py-4 transition-transform ease-out',
+        start && 'animate-scroll',
+        pauseOnHover && 'hover:[animation-play-state:paused]',
+        listClass
+      )}
+    >
+      {children}
+    </ul>
+  )
+})
 
 export const InfiniteMovingCards = ({
   items,
@@ -13,8 +38,8 @@ export const InfiniteMovingCards = ({
   innerShadow = true,
   renderedElement: Elem
 }) => {
-  const containerRef = React.useRef()
-  const scrollerRef = React.useRef()
+  const containerRef = useRef()
+  const scrollerRef = useRef()
 
   useEffect(() => {
     addAnimation()
@@ -57,6 +82,7 @@ export const InfiniteMovingCards = ({
       }
     }
   }
+
   return (
     <div
       ref={containerRef}
@@ -70,16 +96,7 @@ export const InfiniteMovingCards = ({
         })
       )}
     >
-      <ul
-        ref={scrollerRef}
-        className={twMerge(
-          // change gap-16
-          ' flex w-max min-w-full shrink-0 flex-nowrap gap-16 py-4',
-          start && 'animate-scroll',
-          pauseOnHover && 'hover:[animation-play-state:paused]',
-          listClass
-        )}
-      >
+      <Scroller ref={scrollerRef} {...{ start, pauseOnHover, listClass }}>
         {items.map((item, idx) => (
           <li
             className={twMerge('', itemClass)}
@@ -98,7 +115,7 @@ export const InfiniteMovingCards = ({
             </blockquote>
           </li>
         ))}
-      </ul>
+      </Scroller>
     </div>
   )
 }

@@ -3,23 +3,20 @@ import SectionHeading from '../components/SectionHeading'
 import { InfiniteMovingCards } from '../components/InfiniteCards'
 import TestimonialCard from '../components/TestimonialCard'
 import { testimonials } from '../data/data'
-import useMediaQuery from '../hooks/useMediaQuery'
 
 const Testimonials_Section = () => {
-  const largeScreen = useMediaQuery('(max-width:976px)')
-
   return (
-    <section className="testimonials-section mx-auto mt-96 rounded-lg bg-neutral-9400 bg-opacity-90 p-24 sm:w-11/12 sm:min-w-[720px] sm:px-64 sm:py-32">
+    <section className="testimonials-section mx-auto mt-96 rounded-lg bg-neutral-9400 bg-opacity-90 max-sm:p-24 sm:w-3/4 sm:min-w-[720px] sm:p-64">
       <SectionHeading
         heading={'Testimonials'}
         subHeading={'What my previous clients have to say about me'}
       />
-      <div className="rounded-md relative mt-48 flex h-[50vh] flex-col items-center justify-center overflow-hidden antialiased">
+      <div className="rounded-md relative mt-48 flex h-[50vh] flex-col items-center justify-center overflow-hidden antialiased sm:px-32">
         <InfiniteMovingCards
           items={testimonials}
-          innerShadow={largeScreen}
+          innerShadow={true}
           direction="right"
-          speed="slow"
+          speed="normal"
           renderedElement={TestimonialCard}
         />
       </div>
