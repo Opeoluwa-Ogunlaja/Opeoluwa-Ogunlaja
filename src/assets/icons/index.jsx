@@ -10,6 +10,9 @@ import PuzzlePieceIcon from './puzzle_piece.svg?react'
 import SassIcon from './sass.svg?react'
 import TailwindIcon from './tailwindcss.svg?react'
 import UsersMultiIcon from './users_multi.svg?react'
+import UsersIcon from './user.svg?react'
+import MessageTextSquareIcon from './message_smile_circle.svg?react'
+import AtIcon from './at.svg?react'
 
 export {
   FullLogo,
@@ -18,10 +21,13 @@ export {
   BookOpenIcon,
   GamePadIcon,
   MessageSmileCircleIcon,
+  MessageTextSquareIcon,
   GlobeIcon,
   BracketsCheckIcon,
   PuzzlePieceIcon,
   SassIcon,
   TailwindIcon,
-  UsersMultiIcon
+  UsersMultiIcon,
+  UsersIcon,
+  AtIcon
 }

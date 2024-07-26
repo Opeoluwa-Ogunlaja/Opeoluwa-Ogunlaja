@@ -17,6 +17,9 @@ import Testimonials_Section from '../home_sections/Testimonials_Section'
 import { InfiniteMovingCards } from '../components/InfiniteCards'
 import CharacterCard from '../components/CharacterCard'
 import Form_Section from '../home_sections/Form_Section'
+import Home_Section from '../home_sections/Hero_Section'
+import Skills_Section from '../home_sections/Skills_Section'
+import SiteWrapper from '../hoc/SiteWrapper'
 
 const Home = () => {
   return (
@@ -38,8 +41,8 @@ const Home = () => {
                 )}
               >
                 <Navlink to="/">Home</Navlink>
-                <Navlink to="/home">About</Navlink>
-                <Navlink to="/home">Contact Us</Navlink>
+                <Navlink to="/about">About</Navlink>
+                <Navlink to="/contact">Contact Us</Navlink>
               </div>
               <button
                 className="ml-auto text-xl text-white max-sm:visible sm:sr-only sm:invisible"
@@ -51,104 +54,10 @@ const Home = () => {
           )
         })()}
       </header>
-      <main className="mt-64 max-lg:px-24 lg:px-64">
-        <motion.section
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 1, scale: 0 },
-            visible: {
-              opacity: 1,
-              scale: 1,
-              transition: {
-                delayChildren: 0.3,
-                staggerChildren: 0.2,
-                bounce: true
-              }
-            }
-          }}
-          className="hero-section relative grid h-fit max-lg:mb-[356px]"
-        >
-          <div className="flex flex-col gap-24 font-axiforma">
-            <div className="big-text inline-block text-white max-lg:text-center">
-              I'm <strong className="scale-105 text-violet">Opeoluwa</strong>, a{' '}
-              <h3 className="big-text shadow-text origin-top-left align-baseline text-green lg:inline lg:scale-105">
-                Web developer
-              </h3>
-            </div>
-            <p className="max-w-[70ch] font-quicksand text-white max-lg:mx-24 max-lg:text-center max-lg:text-14">
-              I'm a passionate full-stack developer with 3+ years of experience crafting engaging
-              and impactful web experiences. From backend systems to pixel-perfect front-end design,
-              I thrive on tackling challenges and delivering solutions that meet user needs and
-              exceed expectations.
-              <span className="max-lg:hidden lg:contents">
-                {' '}
-                I'm always eager to learn and grow, and I'm looking for opportunities to use my
-                skills to create innovative and impactful solutions.
-              </span>
-            </p>
-            <div className="relative max-lg:mx-auto max-lg:w-[325px] lg:w-[470px]">
-              <InfiniteMovingCards
-                items={characteristics}
-                innerShadow={false}
-                direction="left"
-                speed="normal"
-                listClass={'gap-8'}
-                renderedElement={CharacterCard}
-              />
-            </div>
-            <div className="flex gap-8 max-lg:mx-auto">
-              <Button className={'w-fit'}>Get in Touch</Button>
-              <Button className={'w-fit'} color={'secondary'}>
-                Check out my resume
-              </Button>
-            </div>
-          </div>
-          <div className="stage-cube-cont grid lg:m-16">
-            <div className="cubespinner text-green dark:text-violet">
-              {(() => {
-                const faceClassName = 'bg-green bg-violet bg-opacity-[0.1]'
-                return (
-                  <>
-                    <div className={twMerge('face face1', faceClassName)}>
-                      <ReactLogo />
-                    </div>
-                    <div className={twMerge('face face2', faceClassName)}>
-                      <ReactLogo />
-                    </div>
-                    <div className={twMerge('face face3', faceClassName)}>
-                      <ReactLogo />
-                    </div>
-                    <div className={twMerge('face face4', faceClassName)}>
-                      <ReactLogo />
-                    </div>
-                    <div className={twMerge('face face5', faceClassName)}>
-                      <ReactLogo />
-                    </div>
-                    <div className={twMerge('face face6', faceClassName)}>
-                      <ReactLogo />
-                    </div>
-                  </>
-                )
-              })()}
-            </div>
-          </div>
+      <SiteWrapper>
+        <Home_Section />
 
-          <div className="scroll-indicator m-0 bottom-0 absolute z-10 aspect-[1/2] w-32 self-end justify-self-center rounded-[9999px] border border-neutral-1200 shadow-inner after:bg-green max-lg:-mb-[312px] lg:-mb-64"></div>
-        </motion.section>
-        <section className="skills-section max-lg:mt-192 lg:mt-128">
-          <SectionHeading
-            heading={'Skills'}
-            subHeading={
-              'Over the years, I have gained mastery of various tools and languages related to web development. A few of many are shown below'
-            }
-          />
-          <div className="skills-grid mt-24 flex w-3/5 flex-wrap content-start gap-16 pl-48">
-            {skills.map((skill, i) => {
-              return <SkillCard {...skill} key={skill.title} />
-            })}
-          </div>
-        </section>
+        <Skills_Section />
 
         <Project_Section />
 
@@ -157,7 +66,7 @@ const Home = () => {
         <Testimonials_Section />
 
         <Form_Section />
-      </main>
+      </SiteWrapper>
       <footer className="relative mt-96 flex gap-24 bg-neutral-9400 bg-opacity-80 text-white max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:rounded-t-[64px] max-sm:p-48 max-sm:pb-64 sm:justify-start sm:rounded-t-[96px] sm:p-64">
         <span className="text-green">
           <FullLogo className="w-192" />
