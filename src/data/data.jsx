@@ -7,6 +7,7 @@ import {
   ReactLogo,
   UsersMultiIcon
 } from '../assets/icons'
+import { MindmazeImage } from '../assets/images'
 
 export const skills = [
   {
@@ -31,25 +32,11 @@ export const skills = [
 
 export const projects = [
   {
-    image: '/logo-image.png',
+    image: MindmazeImage,
     title: 'Mindmaze',
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptate officia nesciunt,tempore ipsam temporibus sequi',
-    tags: ['react', 'game']
-  },
-  {
-    image: '/logo-image.png',
-    title: 'Mindmaze',
-    description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptate officia nesciunt,tempore ipsam temporibus sequi',
-    tags: ['website']
-  },
-  {
-    image: '/logo-image.png',
-    title: 'Mindmaze',
-    description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic voluptate officia nesciunt,tempore ipsam temporibus sequi',
-    tags: ['website']
+      'A memory game built with thre react javascript library with a plethora of features.',
+    tags: ['game', 'react']
   }
 ]
 

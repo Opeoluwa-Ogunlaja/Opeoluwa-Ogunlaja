@@ -7,7 +7,7 @@ import { ReactLogo } from '../assets/icons'
 import { characteristics } from '../data/data'
 import CharacterCard from '../components/CharacterCard'
 
-const Home_Section = () => {
+const Home_Section = ({ className }) => {
   return (
     <motion.section
       initial="hidden"
@@ -24,7 +24,7 @@ const Home_Section = () => {
           }
         }
       }}
-      className="hero-section relative grid h-fit max-lg:mb-[356px]"
+      className={twMerge('hero-section relative grid h-fit max-lg:mb-[356px]', className)}
     >
       <div className="flex flex-col gap-24 font-axiforma">
         <div className="big-text inline-block text-white max-lg:text-center">

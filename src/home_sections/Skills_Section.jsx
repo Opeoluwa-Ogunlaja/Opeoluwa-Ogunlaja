@@ -2,10 +2,11 @@ import React from 'react'
 import SectionHeading from '../components/SectionHeading'
 import { skills } from '../data/data'
 import SkillCard from '../components/SkillCard'
+import { twMerge } from 'tailwind-merge'
 
-const Skills_Section = () => {
+const Skills_Section = ({ className }) => {
   return (
-    <section className="skills-section max-lg:mt-192 lg:mt-128">
+    <section className={twMerge('skills-section max-lg:mt-192 lg:mt-128', className)}>
       <SectionHeading
         heading={'Skills'}
         subHeading={

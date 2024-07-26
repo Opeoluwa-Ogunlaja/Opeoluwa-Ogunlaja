@@ -1,10 +1,11 @@
 import React from 'react'
 import SectionHeading from '../components/SectionHeading'
 import Experience from '../components/Timeline'
+import { twMerge } from 'tailwind-merge'
 
-const Experience_Section = () => {
+const Experience_Section = ({ className }) => {
   return (
-    <section className="experience-section mt-96">
+    <section className={twMerge('experience-section mt-96', className)}>
       <SectionHeading
         heading={'Experience'}
         subHeading={'This is a summary of my work experience over my career'}

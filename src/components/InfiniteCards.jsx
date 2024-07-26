@@ -2,12 +2,9 @@ import clsx from 'clsx'
 import React, { useEffect, useState, useRef, forwardRef, useCallback } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { useSwipe } from '../hooks/useSwipe'
-import { useTimeout } from '../hooks/useTimeout'
 
 const Scroller = forwardRef(({ children, start, pauseOnHover, listClass }, ref) => {
-  const swipeCallback = useCallback(e => {
-    const elem = ref.current
-  })
+  const swipeCallback = useCallback(direction => {})
 
   useSwipe(ref.current, swipeCallback)
 

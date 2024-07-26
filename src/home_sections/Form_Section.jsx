@@ -1,10 +1,16 @@
 import React from 'react'
 import { TextAreaField, TextField } from '../components/InputFields'
 import Button from '../components/Button'
+import { twMerge } from 'tailwind-merge'
 
-const Form_Section = () => {
+const Form_Section = ({ className }) => {
   return (
-    <section className="form-section mt-192 flex flex-col items-center max-sm:gap-24 sm:gap-64">
+    <section
+      className={twMerge(
+        'form-section mt-192 flex flex-col items-center max-sm:gap-24 sm:gap-64',
+        className
+      )}
+    >
       <h3 className="text-pretty text-center font-axiforma text-white max-sm:text-3xl sm:text-5xl">
         Need <strong className="text-green">help</strong> with something?
       </h3>

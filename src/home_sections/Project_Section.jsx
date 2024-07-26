@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge'
 import clsx from 'clsx'
 import { projects } from '../data/data'
 
-const Project_Section = () => {
+const Project_Section = ({ className }) => {
   const [filter, setFilter] = useState('')
   const tabButtonClassFn = bool =>
     twMerge(
@@ -13,7 +13,7 @@ const Project_Section = () => {
       clsx({ ['underline bg-neutral-9400 text-green font-medium']: bool })
     )
   return (
-    <section className="projects-section mt-128">
+    <section className={twMerge('projects-section mt-128', className)}>
       <SectionHeading
         heading={'Projects'}
         subHeading={'Here are some examples of work I have done in the past'}
@@ -31,6 +31,14 @@ const Project_Section = () => {
               onClick={() => setFilter('websites')}
             >
               Webites
+            </button>
+          </li>
+          <li>
+            <button
+              className={tabButtonClassFn(filter == 'games')}
+              onClick={() => setFilter('games')}
+            >
+              Games
             </button>
           </li>
         </ul>
