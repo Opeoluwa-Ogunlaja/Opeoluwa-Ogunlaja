@@ -42,18 +42,7 @@ export const projects = [
 
 export const experience = [
   {
-    icon: '/vite.svg',
-    date: '2021 - Present',
-    company_name: 'Upwork',
-    title: 'Fullstack Developer',
-    points: [
-      'Developing and maintaining web applications using React.js and oher related web technologies',
-      'Building web applications for different niches and businesses',
-      'Giving multiple businesses an online presence'
-    ]
-  },
-  {
-    icon: '/vite.svg',
+    icon: 'https://www.upwork.com/favicon.ico',
     date: '2021 - Present',
     company_name: 'Upwork',
     title: 'Fullstack Developer',
@@ -77,7 +66,7 @@ export const testimonials = [
       'I thought the website for our product would be impossible to build . Till I met Opeoluwa and he proved me wrong'
   },
   {
-    name: 'John Doe',
+    name: 'Jane Doe',
     image:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqac0kO5njric6qkMm718Qyv6G9G0WHx9BmA&s',
     role: 'CTO at Acne.co',
@@ -87,7 +76,7 @@ export const testimonials = [
       'I thought the website for our product would be impossible to build . Till I met Opeoluwa and he proved me wrong'
   },
   {
-    name: 'John Doe',
+    name: 'John Don',
     image:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqac0kO5njric6qkMm718Qyv6G9G0WHx9BmA&s',
     role: 'CTO at Acne.co',
