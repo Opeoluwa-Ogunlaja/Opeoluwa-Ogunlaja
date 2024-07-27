@@ -1,5 +1,5 @@
 import React from 'react'
-import { FullLogo, ReactLogo } from '../assets/icons'
+import { FullLogo } from '../assets/icons'
 import './home.scss'
 import Navlink from '../components/NavLink'
 import Project_Section from '../home_sections/Project_Section'

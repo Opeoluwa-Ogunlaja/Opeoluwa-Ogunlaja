@@ -4,6 +4,7 @@ import SectionHeading from '../components/SectionHeading'
 import TestimonialCard from '../components/TestimonialCard'
 import { testimonials } from '../data/data'
 import { twMerge } from 'tailwind-merge'
+import { InfiniteMovingCards } from './../components/InfiniteCards'
 
 const Testimonials_Section = ({ className }) => {
   return (
@@ -16,11 +17,16 @@ const Testimonials_Section = ({ className }) => {
       <SectionHeading
         heading={'Testimonials'}
         subHeading={'What my previous clients have to say about me'}
+        className={'flex flex-col items-center justify-center text-center'}
       />
       <div className="rounded-md relative mt-48 flex h-[50vh] flex-col items-center justify-center overflow-hidden antialiased sm:px-32">
-        {testimonials.map(testimonial => (
-          <TestimonialCard {...testimonial} key={testimonial.name} />
-        ))}
+        <InfiniteMovingCards
+          items={testimonials}
+          innerShadow={false}
+          direction="left"
+          speed="normal"
+          renderedElement={TestimonialCard}
+        />
       </div>
     </section>
   )
