@@ -28,11 +28,11 @@ const Home = () => {
 
         <Form_Section />
       </SiteWrapper>
-      <footer className="relative mt-96 flex gap-24 bg-neutral-9400 bg-opacity-80 text-white max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:rounded-t-[64px] max-sm:p-48 max-sm:pb-64 sm:justify-start sm:rounded-t-[96px] sm:p-64">
+      <footer className="relative mt-96 flex gap-24 bg-neutral-9400 bg-opacity-80 text-white max-md:flex-col max-md:items-center max-md:justify-center max-md:rounded-t-[64px] max-md:p-48 max-md:pb-64 md:justify-start md:rounded-t-[96px] md:p-64">
         <span className="text-green">
           <FullLogo className="w-192" />
         </span>
-        <div className="flex flex-col gap-8 text-center max-sm:justify-center">
+        <div className="flex flex-col gap-8 text-center max-md:justify-center">
           <h4 className="text-neutral-9200">Connect</h4>
           <ul>
             <li>
@@ -46,7 +46,7 @@ const Home = () => {
             </li>
           </ul>
         </div>
-        <ul className="flex gap-8 max-sm:mt-24 max-sm:justify-center sm:ml-auto">
+        <ul className="flex gap-8 max-md:mt-24 max-md:justify-center md:ml-auto">
           <li>
             <a href="">FB</a>
           </li>
@@ -54,7 +54,7 @@ const Home = () => {
             <a href="">IG</a>
           </li>
         </ul>
-        <div className="absolute inset-x-[0] bottom-32 flex justify-center gap-24 max-sm:mt-16">
+        <div className="absolute inset-x-[0] bottom-32 flex justify-center gap-24 max-md:mt-16">
           <Navlink to="/">Home</Navlink>
           <Navlink to="/home">About</Navlink>
         </div>
