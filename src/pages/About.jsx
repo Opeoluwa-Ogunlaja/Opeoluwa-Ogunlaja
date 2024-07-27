@@ -10,7 +10,7 @@ const About = () => {
       <Topnav />
       <SiteWrapper>
         <Home_Section />
-        <Experience_Section />
+        <Experience_Section className={'mt-192'} />
       </SiteWrapper>
     </>
   )

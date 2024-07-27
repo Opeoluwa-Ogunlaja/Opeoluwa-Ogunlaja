@@ -9,7 +9,7 @@ const Testimonials_Section = ({ className }) => {
   return (
     <section
       className={twMerge(
-        'testimonials-section mx-auto mt-96 rounded-lg bg-neutral-9400 bg-opacity-10 max-sm:p-24 sm:w-3/4 sm:min-w-[720px] sm:p-64',
+        'testimonials-section mx-auto mt-96 rounded-lg bg-neutral-9400 bg-opacity-10 max-sm:p-24 sm:w-3/4 sm:p-64',
         className
       )}
     >
