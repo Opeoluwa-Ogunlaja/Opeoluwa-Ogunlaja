@@ -6,8 +6,11 @@ import Button from '../components/Button'
 import { ReactLogo } from '../assets/icons'
 import { characteristics } from '../data/data'
 import CharacterCard from '../components/CharacterCard'
+import { useModalUpdate } from './../hooks/useModalUpdate'
 
 const Home_Section = ({ className }) => {
+  const { openModal } = useModalUpdate()
+
   return (
     <motion.section
       initial="hidden"
@@ -56,7 +59,7 @@ const Home_Section = ({ className }) => {
         </div>
         <div className="flex gap-8 max-lg:mx-auto">
           <Button className={'w-fit'}>Get in Touch</Button>
-          <Button className={'w-fit'} color={'secondary'}>
+          <Button className={'w-fit'} color={'secondary'} onClick={() => openModal('resume')}>
             Check out my resume
           </Button>
         </div>
