@@ -3,7 +3,7 @@ import { TestimonialQuoteIcon } from '../assets/icons'
 
 const TestimonialCard = ({ name, image, role, title, organisation, review }) => {
   return (
-    <div className="relative w-[225px] rounded-lg bg-neutral-9500 bg-opacity-[0.48] px-16 pb-24 pt-48 text-snow hover:scale-105">
+    <div className="relative w-[225px] rounded-lg bg-neutral-9500 bg-opacity-85 px-16 pb-24 pt-48 text-snow hover:scale-105">
       <div className="absolute left-[0] top-[0] translate-x-1/4 select-none">
         <TestimonialQuoteIcon className="select-none" />
       </div>

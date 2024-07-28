@@ -10,7 +10,7 @@ const Testimonials_Section = ({ className }) => {
   return (
     <section
       className={twMerge(
-        'testimonials-section mx-auto mt-96 rounded-lg bg-neutral-9400 bg-opacity-10 max-sm:p-24 sm:w-3/4 sm:p-64',
+        'testimonials-section mx-auto mt-96 rounded-lg bg-neutral-9400 bg-opacity-10 max-lg:w-full max-md:p-24 md:p-64 lg:w-3/4',
         className
       )}
     >
@@ -19,12 +19,12 @@ const Testimonials_Section = ({ className }) => {
         subHeading={'What my previous clients have to say about me'}
         className={'flex flex-col items-center justify-center text-center'}
       />
-      <div className="rounded-md relative mt-48 flex h-[50vh] flex-col items-center justify-center overflow-hidden antialiased sm:px-32">
+      <div className="rounded-md relative mt-48 flex h-[50vh] flex-col items-center justify-center overflow-hidden antialiased md:px-32">
         <InfiniteMovingCards
           items={testimonials}
           innerShadow={false}
           direction="left"
-          speed="normal"
+          speed="fast"
           renderedElement={TestimonialCard}
         />
       </div>
