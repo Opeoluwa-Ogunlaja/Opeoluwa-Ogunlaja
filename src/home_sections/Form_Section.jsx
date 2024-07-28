@@ -7,7 +7,7 @@ const Form_Section = ({ className }) => {
   return (
     <section
       className={twMerge(
-        'form-section mt-192 flex flex-col items-center max-sm:gap-24 sm:gap-64',
+        'form-section mt-24 flex flex-col items-center max-sm:gap-24 sm:gap-64',
         className
       )}
     >

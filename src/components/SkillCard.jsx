@@ -1,6 +1,4 @@
-import React, { useRef } from 'react'
-import { useEventListener } from './../hooks/useEventListener'
-import { useToggle } from './../hooks/useToggle'
+import React from 'react'
 import { twMerge } from 'tailwind-merge'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
@@ -8,7 +6,7 @@ import { motion } from 'framer-motion'
 const SkillCard = ({ icon: Icon, title, subtitle, type }) => {
   return (
     <div className="skill relative" key={title}>
-      <button className="flex aspect-square w-48  items-center justify-center rounded-sm bg-neutral-1300 bg-opacity-70">
+      <button className="flex aspect-square w-48  items-center justify-center rounded-sm bg-neutral-9300 bg-opacity-70">
         <Icon className={'aspect-square w-32'} />
       </button>
       <motion.div className={twMerge('skill-description inset-x-1/2 rounded-sm p-8', clsx())}>

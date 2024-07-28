@@ -219,7 +219,7 @@
     grid-template-columns: 1fr var(--cube-size);
   }
 
-  @media screen and (max-width: 1080px) {
+  @media screen and (max-width: 976px) {
     .hero-section {
       grid-template-columns: 1fr;
       grid-template-rows: max-content 1fr;
