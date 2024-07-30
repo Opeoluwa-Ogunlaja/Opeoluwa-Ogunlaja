@@ -33,9 +33,9 @@ const Modal = ({ children, id, onClose = function () {}, className }) => {
   }, [onClose])
 
   return createPortal(
-    <motion.dialog className={twMerge('', className)} ref={dialogRef}>
+    <dialog className={twMerge('', className)} ref={dialogRef}>
       {children}
-    </motion.dialog>,
+    </dialog>,
     document.body
   )
 }
