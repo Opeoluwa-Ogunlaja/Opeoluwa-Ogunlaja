@@ -229,4 +229,13 @@
       inset-inline: 0;
     }
   }
+
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    height: 100dvh;
+    width: 100dvw;
+    z-index: 100;
+  }
 }

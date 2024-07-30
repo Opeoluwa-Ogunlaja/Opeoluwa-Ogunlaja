@@ -7,7 +7,7 @@ import { twMerge } from 'tailwind-merge'
 
 /**
  * @type {import('tailwindcss/tailwind-config').TailwindConfig['theme']}
- */
+ */ import { motion } from 'framer-motion'
 
 const button = cva(
   'cta-btn p-12 font-semibold rounded-sm max-lg:text-14 text-16 font-axiforma transition-all shadow-md',
@@ -27,9 +27,14 @@ const button = cva(
 const Button = props => {
   const { color, children, className, ...buttonProps } = props
   return (
-    <button {...buttonProps} className={twMerge(button({ color }), className)}>
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.9 }}
+      {...buttonProps}
+      className={twMerge(button({ color }), className)}
+    >
       {children}
-    </button>
+    </motion.button>
   )
 }
 
