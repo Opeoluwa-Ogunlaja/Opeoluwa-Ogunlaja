@@ -7,9 +7,9 @@ const ResumeModal = () => {
   const { closeModal } = useModalUpdate()
   return (
     <Modal id={'resume'} className={'pointer-events-none grid h-full'}>
-      <div className="pointer-events-auto mx-auto grid h-full w-[500px] grid-cols-1 place-content-center">
+      <div className="max-sm:[320px] pointer-events-auto mx-auto grid h-full grid-cols-1 place-content-center sm:w-[480px]">
         <header className="bg-neutral-9300 p-16 text-xl font-bold text-green">My Resume</header>
-        <div className="min-h-[400px] w-full">
+        <div className="min-h-[400px] w-full bg-[#02160A]">
           <object
             type="application/pdf"
             className="h-full w-full object-cover"
