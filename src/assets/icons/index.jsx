@@ -13,6 +13,8 @@ import UsersMultiIcon from './users_multi.svg?react'
 import UsersIcon from './user.svg?react'
 import MessageTextSquareIcon from './message_smile_circle.svg?react'
 import AtIcon from './at.svg?react'
+import FacebookIcon from './facebook.svg?react'
+import InstagramIcon from './instagram.svg?react'
 
 export {
   FullLogo,
@@ -29,5 +31,7 @@ export {
   TailwindIcon,
   UsersMultiIcon,
   UsersIcon,
-  AtIcon
+  AtIcon,
+  FacebookIcon,
+  InstagramIcon
 }

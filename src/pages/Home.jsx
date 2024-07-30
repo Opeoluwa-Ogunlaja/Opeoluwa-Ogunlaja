@@ -1,5 +1,5 @@
 import React from 'react'
-import { FullLogo } from '../assets/icons'
+import { FacebookIcon, FullLogo, InstagramIcon } from '../assets/icons'
 import './home.scss'
 import Navlink from '../components/NavLink'
 import Project_Section from '../home_sections/Project_Section'
@@ -48,10 +48,14 @@ const Home = () => {
         </div>
         <ul className="flex gap-8 max-md:mt-24 max-md:justify-center md:ml-auto">
           <li>
-            <a href="">FB</a>
+            <a href="">
+              <FacebookIcon className="scale-75" />
+            </a>
           </li>
           <li>
-            <a href="">IG</a>
+            <a href="">
+              <InstagramIcon className="scale-75" />
+            </a>
           </li>
         </ul>
         <div className="absolute inset-x-[0] bottom-32 flex justify-center gap-24 max-md:mt-16">
