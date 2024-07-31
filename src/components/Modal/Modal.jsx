@@ -29,7 +29,7 @@ const dropIn = {
   }
 }
 
-const Modal = ({ children, id, onClose = function () {}, className, variant = dropIn }) => {
+const Modal = ({ children, id, coloredBackdrop = true, className, variant = dropIn }) => {
   const { open, openId } = useModalState()
   const { closeModal } = useModalUpdate()
   const dialogRef = useRef()
@@ -54,7 +54,7 @@ const Modal = ({ children, id, onClose = function () {}, className, variant = dr
   return createPortal(
     <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>
       {isReallyOpen && (
-        <Backdrop onClick={closeModal}>
+        <Backdrop onClick={closeModal} colored={coloredBackdrop}>
           <motion.div
             onClick={e => e.stopPropagation()}
             variants={variant}

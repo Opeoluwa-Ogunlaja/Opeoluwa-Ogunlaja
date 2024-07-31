@@ -8,7 +8,7 @@ const Skills_Section = ({ className }) => {
   return (
     <section className={twMerge('skills-section max-lg:mt-192 lg:mt-128', className)}>
       <SectionHeading
-        heading={'Skills'}
+        heading={'Skills and Tools'}
         subHeading={
           'Over the years, I have gained mastery of various tools and languages related to web development. A few of many are shown below'
         }

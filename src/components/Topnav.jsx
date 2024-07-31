@@ -21,7 +21,7 @@ const Topnav = () => {
         <FullLogo className="aspect-auto w-192 scale-90 lg:w-auto" />
       </div>
 
-      <div
+      <motion.div
         className={twMerge(
           'z-[300000000000000000000] ml-auto flex items-center gap-16 font-quicksand transition max-md:invisible max-md:absolute max-md:inset-x-[0] max-md:mt-128 max-md:w-max max-md:-translate-x-24 max-md:translate-y-24 max-md:flex-col max-md:rounded-lg max-md:bg-neutral-1400 max-md:px-32 max-md:py-16 max-md:opacity-0',
           clsx({ ['visible max-md:opacity-100']: isOpen })
@@ -31,7 +31,7 @@ const Topnav = () => {
         <Navlink to="/projects">Projects</Navlink>
         <Navlink to="/about">About</Navlink>
         <Navlink to="/contact">Contact Us</Navlink>
-      </div>
+      </motion.div>
       <button
         className="ml-auto text-xl text-white max-md:visible md:sr-only md:invisible"
         onClick={toggle}

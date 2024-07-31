@@ -35,7 +35,7 @@ export const projects = [
     image: MindmazeImage,
     title: 'Mindmaze',
     description:
-      'A memory game built with thre react javascript library with a plethora of features.',
+      'A memory game built with the react javascript library with a plethora of features.',
     tags: ['game', 'react']
   }
 ]

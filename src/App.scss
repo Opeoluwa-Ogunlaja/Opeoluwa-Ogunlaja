@@ -74,6 +74,10 @@
       background-size: 12px;
     }
   }
+  code-list-item::marker {
+    @apply text-green;
+    content: '<>';
+  }
 
   section {
     margin-inline: auto;
@@ -233,9 +237,12 @@
   .backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.2);
     height: 100dvh;
     width: 100dvw;
     z-index: 100;
+  }
+
+  .backdrop.colored {
+    background: rgba(0, 0, 0, 0.2);
   }
 }
