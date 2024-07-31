@@ -9,17 +9,16 @@ const ProjectModal = () => {
   const { closeModal } = useModalUpdate()
   const { misc } = useModalState()
   const { project } = misc
-
   return (
     <Modal
       id={'project'}
-      coloredBackdrop={false}
+      // coloredBackdrop={false}
       className={'pointer-events-none grid h-full'}
       variant={sideRight}
     >
       <div className="pointer-events-auto mx-auto grid h-full grid-cols-1 place-content-center">
         <div
-          className="absolute right-[0] grid min-h-full bg-neutral-1400 bg-opacity-90 shadow-md max-sm:w-[280px] sm:w-[450px]"
+          className="absolute right-[0] grid min-h-full bg-neutral-1400 shadow-md max-sm:w-[280px] md:w-[450px] md:bg-opacity-90"
           style={{ gridTemplateRows: 'max-content 1fr max-content' }}
         >
           <header className="flex h-64 items-center justify-end border-b-2 border-gray px-16">
@@ -27,7 +26,7 @@ const ProjectModal = () => {
               See all projects
             </Link>
           </header>
-          <section className="flex w-full scroll-py-16 flex-col items-start justify-start overflow-x-auto p-32 text-start">
+          <section className="flex w-full scroll-py-16 flex-col items-start justify-start overflow-x-auto text-start max-sm:p-16 sm:p-32">
             <div className="mt-32 space-y-24">
               <div className="contents">
                 <h3 className="font-axiforma text-3xl font-bold text-white">{project?.title}</h3>
