@@ -109,3 +109,8 @@ export function tagFromTitle(title) {
   const index = tags.findIndex(tag => tag.tagTitle.toLowerCase() == title.toLowerCase())
   return { ...tags[(index, index)] }
 }
+
+export function projectFromTitle(title, retrurnIndex) {
+  const index = projects.findIndex(project => project.title.toLowerCase() == title.toLowerCase())
+  return retrurnIndex ? index : { ...projects[index] }
+}

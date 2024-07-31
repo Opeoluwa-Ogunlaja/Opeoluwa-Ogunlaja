@@ -7,6 +7,7 @@ import { ReactLogo } from '../assets/icons'
 import { characteristics } from '../data/data'
 import CharacterCard from '../components/CharacterCard'
 import { useModalUpdate } from './../hooks/useModalUpdate'
+import { container, item, itemLeft, itemRight } from '../data/animations'
 
 const Home_Section = ({ className }) => {
   const { openModal } = useModalUpdate()
@@ -15,21 +16,10 @@ const Home_Section = ({ className }) => {
     <motion.section
       initial="hidden"
       animate="visible"
-      variants={{
-        hidden: { opacity: 1, scale: 0 },
-        visible: {
-          opacity: 1,
-          scale: 1,
-          transition: {
-            delayChildren: 0.3,
-            staggerChildren: 0.2,
-            bounce: true
-          }
-        }
-      }}
-      className={twMerge('hero-section relative grid h-fit max-lg:mb-[356px]', className)}
+      variants={container}
+      className={twMerge('hero-section relative z-0 grid h-fit max-lg:mb-[356px]', className)}
     >
-      <div className="flex flex-col gap-24 font-axiforma">
+      <motion.div variants={itemLeft} className="z-0 flex flex-col gap-24 font-axiforma">
         <div className="big-text inline-block text-white max-lg:text-center">
           I'm <strong className="scale-105 text-violet">Opeoluwa</strong>, a{' '}
           <h3 className="big-text shadow-text origin-top-left align-baseline text-green lg:inline lg:scale-105">
@@ -63,8 +53,8 @@ const Home_Section = ({ className }) => {
             Check out my resume
           </Button>
         </div>
-      </div>
-      <div className="stage-cube-cont grid lg:m-16">
+      </motion.div>
+      <motion.div variants={itemRight} className="stage-cube-cont grid lg:m-16">
         <div className="cubespinner text-green dark:text-violet">
           {(() => {
             const faceClassName = 'bg-green bg-violet bg-opacity-[0.1]'
@@ -92,7 +82,7 @@ const Home_Section = ({ className }) => {
             )
           })()}
         </div>
-      </div>
+      </motion.div>
       <div className="scroll-indicator m-0 bottom-0 absolute z-10 aspect-[1/2] w-32 self-end justify-self-center rounded-[9999px] border border-neutral-1200 shadow-inner after:bg-green max-lg:-mb-[312px] lg:-mb-64"></div>
     </motion.section>
   )

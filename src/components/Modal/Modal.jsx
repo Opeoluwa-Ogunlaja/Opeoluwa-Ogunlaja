@@ -9,14 +9,15 @@ import Backdrop from '../Backdrop'
 
 const dropIn = {
   hidden: {
-    y: '-100vh',
+    y: '-50vh',
     opacity: 0
   },
   visible: {
     y: '0',
+
     opacity: 1,
     transition: {
-      duration: 0.1,
+      duration: 0.3,
       type: 'spring',
       damping: 25,
       stiffness: 500
@@ -28,7 +29,7 @@ const dropIn = {
   }
 }
 
-const Modal = ({ children, id, onClose = function () {}, className }) => {
+const Modal = ({ children, id, onClose = function () {}, className, variant = dropIn }) => {
   const { open, openId } = useModalState()
   const { closeModal } = useModalUpdate()
   const dialogRef = useRef()
@@ -56,7 +57,7 @@ const Modal = ({ children, id, onClose = function () {}, className }) => {
         <Backdrop onClick={closeModal}>
           <motion.div
             onClick={e => e.stopPropagation()}
-            variants={dropIn}
+            variants={variant}
             initial="hidden"
             animate="visible"
             exit="exit"

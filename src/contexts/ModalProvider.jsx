@@ -8,24 +8,29 @@ const reducer = (state, action) => {
       return {
         ...state,
         open: true,
-        openId: action.openId
+        openId: action.openId,
+        misc: action.misc ?? {}
       }
     case 'close':
       return {
         ...state,
         open: false,
-        openId: ''
+        openId: '',
+        misc: {}
       }
     default:
       return state
   }
 }
 const ModalProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, { isOpen: false, openId: '' })
+  const [state, dispatch] = useReducer(reducer, { isOpen: false, openId: '', misc: {} })
 
   const memoState = useMemo(() => state, [state])
 
-  const openModal = useCallback(openId => dispatch({ type: 'open', openId }), [dispatch])
+  const openModal = useCallback(
+    (openId, misc) => dispatch({ type: 'open', openId, misc }),
+    [dispatch]
+  )
   const closeModal = useCallback(() => dispatch({ type: 'close' }), [dispatch])
 
   return (

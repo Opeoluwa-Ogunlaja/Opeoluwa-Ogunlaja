@@ -1,10 +1,20 @@
 import React from 'react'
 import TechPill from './TechPill'
-import { tagFromTitle } from '../data/data'
+import { projectFromTitle, tagFromTitle } from '../data/data'
+import { useModalUpdate } from '../hooks/useModalUpdate'
 
 const ProjectCard = ({ image, title, description, tags }) => {
+  const { openModal } = useModalUpdate()
+
+  const handleClick = () => {
+    openModal('project', { project: projectFromTitle(title) })
+  }
+
   return (
-    <div className="flex cursor-pointer flex-col gap-16 rounded-sm bg-neutral-9400 bg-opacity-80 p-12 transition-transform hover:scale-105">
+    <div
+      onClick={handleClick}
+      className="flex cursor-pointer flex-col gap-16 rounded-sm bg-neutral-9400 bg-opacity-80 p-12 transition-transform hover:scale-105"
+    >
       <div className="grid place-content-center rounded-sm">
         <img src={image} alt="project image" className="max-h-192 w-full object-cover" />
       </div>

@@ -29,7 +29,7 @@ const Button = props => {
   return (
     <motion.button
       whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.9 }}
+      whileTap={{ scale: 0.98 }}
       {...buttonProps}
       className={twMerge(button({ color }), className)}
     >
