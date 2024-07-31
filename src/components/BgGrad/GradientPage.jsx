@@ -45,7 +45,7 @@ const InteractiveElement = () => {
 export const GradientPage = () => {
   return (
     <>
-      <div className="gradient-bg after:bg-neutral-1400 max-sm:after:bg-opacity-80 sm:after:bg-opacity-95">
+      <div className="gradient-bg after:bg-neutral-1400 max-sm:after:bg-opacity-90 sm:after:bg-opacity-95">
         <svg xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="goo">

@@ -18,7 +18,7 @@ const ProjectModal = () => {
     >
       <div className="pointer-events-auto mx-auto grid h-full grid-cols-1 place-content-center">
         <div
-          className="absolute right-[0] grid min-h-full bg-neutral-1400 shadow-md max-sm:w-[280px] md:w-[450px] md:bg-opacity-90"
+          className="absolute right-[0] grid min-h-full bg-neutral-1400 shadow-md max-sm:w-[320px] sm:w-[450px] md:bg-opacity-90"
           style={{ gridTemplateRows: 'max-content 1fr max-content' }}
         >
           <header className="flex h-64 items-center justify-end border-b-2 border-gray px-16">
