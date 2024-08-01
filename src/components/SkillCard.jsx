@@ -7,9 +7,18 @@ const SkillCard = ({ icon: Icon, title, subtitle, type }) => {
   return (
     <div className="skill relative" key={title}>
       <button className="flex aspect-square w-48  items-center justify-center rounded-sm bg-neutral-9300 bg-opacity-70">
-        <Icon className={'aspect-square w-32'} />
+        {typeof Icon !== 'string' ? (
+          <Icon className={'aspect-square w-32 drop-shadow-lg'} />
+        ) : (
+          <img src={Icon} className="w-32 drop-shadow-lg" />
+        )}
       </button>
-      <motion.div className={twMerge('skill-description inset-x-1/2 rounded-sm p-8', clsx())}>
+      <motion.div
+        className={twMerge(
+          'skill-description inset-x-1/2 rounded-sm bg-neutral-1300 p-8 drop-shadow-lg',
+          clsx()
+        )}
+      >
         <h3 className="font-axiforma text-base text-white underline">{title}</h3>
         <span className="text-neutral-9200">{type}</span>
         <p className="max-w-[50ch] text-neutral-1100">{subtitle}</p>

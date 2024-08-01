@@ -74,9 +74,11 @@
       background-size: 12px;
     }
   }
-  code-list-item::marker {
+
+  .code-list li::marker {
     @apply text-green;
     content: '<>';
+    letter-spacing: 0.125rem;
   }
 
   section {
@@ -183,7 +185,6 @@
       opacity: 0;
       bottom: 100%;
       color: white;
-      @apply bg-neutral-1400;
       width: 25ch;
       z-index: 10;
       font-size: 12px;
@@ -213,6 +214,10 @@
         visibility: visible;
         opacity: 1;
         transform: scale(1) translateY(0) translateX(-50%);
+      }
+
+      button {
+        scale: 1.1;
       }
     }
   }

@@ -36,8 +36,8 @@ const Topnav = () => {
         ref={navRef}
       >
         <Navlink to="/">Home</Navlink>
-        <Navlink to="/projects">Projects</Navlink>
         <Navlink to="/about">About</Navlink>
+        <Navlink to="/projects">Projects</Navlink>
         <Navlink to="/contact">Contact Us</Navlink>
       </motion.div>
       <button

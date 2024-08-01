@@ -7,26 +7,58 @@ import {
   ReactLogo,
   UsersMultiIcon
 } from '../assets/icons'
-import { MindmazeImage } from '../assets/images'
+import {
+  CSS3LogoImage,
+  GoogleCloudLogoImage,
+  HTML5LogoImage,
+  JSLogoImage,
+  MindmazeImage,
+  NodeJSLogoImage,
+  PHPLogoImage
+} from '../assets/images'
 
 export const skills = [
   {
+    icon: HTML5LogoImage,
+    type: 'Markup Language',
+    title: 'HTML5',
+    subtitle: 'HTML5 is the latest version of HTML for structuring web content.'
+  },
+  {
+    icon: CSS3LogoImage,
+    type: 'Stylesheet language',
+    title: 'CSS3',
+    subtitle: "CSS is a stylesheet language for designing web pages' visual appearance."
+  },
+  {
+    icon: JSLogoImage,
+    type: 'Programming language',
+    title: 'Javascript',
+    subtitle: 'JavaScript is a programming language for interactive and dynamic web content.'
+  },
+  {
     icon: ReactLogo,
-    type: 'Developer Tool',
+    type: 'Frontend Library',
     title: 'React',
     subtitle: 'A Javascript library for building single page applications'
   },
   {
-    icon: ReactLogo,
-    type: 'Developer Tool',
-    title: 'Google Cloud',
-    subtitle: 'A Javascript library for building single page applications'
+    icon: NodeJSLogoImage,
+    type: 'Developer tool',
+    title: 'NodeJS',
+    subtitle: 'Node.js is a JavaScript runtime enabling server-side scripting and execution.'
   },
   {
-    icon: ReactLogo,
+    icon: PHPLogoImage,
     type: 'Programming language',
-    title: 'CSS',
-    subtitle: 'A Javascript library for building single page applications'
+    title: 'PHP',
+    subtitle: 'PHP is a server-side scripting language for web development and automation.'
+  },
+  {
+    icon: GoogleCloudLogoImage,
+    type: 'Developer Tool',
+    title: 'Google Cloud',
+    subtitle: 'Google Cloud is a suite of cloud computing services by Google.'
   }
 ]
 
@@ -36,6 +68,7 @@ export const projects = [
     title: 'Mindmaze',
     description:
       'A memory game built with the react javascript library with a plethora of features.',
+    takeaways: ['Hello', 'Hi', 'Nice one'],
     tags: ['game', 'react']
   }
 ]

@@ -15,6 +15,7 @@ import MessageTextSquareIcon from './message_smile_circle.svg?react'
 import AtIcon from './at.svg?react'
 import FacebookIcon from './facebook.svg?react'
 import InstagramIcon from './instagram.svg?react'
+import NodeJSLogo from './nodejs.svg?react'
 
 export {
   FullLogo,
@@ -33,5 +34,6 @@ export {
   UsersIcon,
   AtIcon,
   FacebookIcon,
-  InstagramIcon
+  InstagramIcon,
+  NodeJSLogo
 }
