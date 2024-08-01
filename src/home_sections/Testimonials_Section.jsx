@@ -22,7 +22,7 @@ const Testimonials_Section = ({ className }) => {
       <div className="rounded-md relative mt-48 flex h-[50vh] flex-col items-center justify-center overflow-hidden antialiased md:px-32">
         <InfiniteMovingCards
           items={testimonials}
-          innerShadow={false}
+          innerShadow={true}
           direction="left"
           speed="fast"
           renderedElement={TestimonialCard}

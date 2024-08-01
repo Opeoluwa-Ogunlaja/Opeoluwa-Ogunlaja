@@ -68,7 +68,11 @@ export const projects = [
     title: 'Mindmaze',
     description:
       'A memory game built with the react javascript library with a plethora of features.',
-    takeaways: ['Hello', 'Hi', 'Nice one'],
+    takeaways: [
+      'Learnt to use the popular Chakra UI design library',
+      'Learnt to work with sound in Websites'
+    ],
+    sellingPoint: ['Chakra UI', 'Game', 'Responsive', 'Reactive', 'Engaging'],
     tags: ['game', 'react']
   }
 ]

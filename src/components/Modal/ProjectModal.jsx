@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import Button from '../Button'
 import TechPill from '../TechPill'
 import { tagFromTitle } from '../../data/data'
+import { twMerge } from 'tailwind-merge'
 
 const ProjectModal = () => {
   const { closeModal } = useModalUpdate()
@@ -28,7 +29,7 @@ const ProjectModal = () => {
               See all projects
             </Link>
           </header>
-          <section className="flex w-full scroll-py-16 flex-col items-start justify-start overflow-y-auto text-start max-sm:p-16 sm:p-32">
+          <section className="flex w-full scroll-py-16 flex-col items-start justify-start gap-16 overflow-y-auto text-start max-sm:p-24 sm:p-32">
             <div className="mt-32 space-y-24">
               <div className="contents">
                 <h3 className="font-axiforma text-3xl font-bold text-white">{project?.title}</h3>
@@ -38,22 +39,31 @@ const ProjectModal = () => {
             </div>
             <div className="mt-16 flex flex-col gap-8">
               <h3 className="font-bold text-neutral-1200">Tools</h3>
-              <div className="flex gap-8">
-                {project?.tags.map(tag => (
-                  <TechPill
-                    key={tag}
-                    className={'rounded-[none] bg-neutral-9500 bg-opacity-80 px-24'}
-                    {...tagFromTitle(tag)}
-                  />
-                ))}
+              <div className="flex flex-wrap gap-8">
+                {project?.sellingPoint.map(point => {
+                  const possibleColors = ['skyblue', 'lightgreen', 'yellow', 'coral', 'butter']
+                  return (
+                    <div
+                      key={point}
+                      className={twMerge(
+                        `rounded-[none] bg-neutral-9300 bg-opacity-80 px-24 py-8 text-sm shadow-inner`
+                      )}
+                      style={{
+                        color: `${possibleColors[Math.floor(Math.random() * (possibleColors.length - 1))]}`
+                      }}
+                    >
+                      {point}
+                    </div>
+                  )
+                })}
               </div>
             </div>
             <div className="mt-16 flex flex-col gap-8">
               <h3 className="font-bold text-neutral-1200">Key takeaways</h3>
-              <ul className="code-list flex flex-col gap-8 px-16">
+              <ul className="code-list flex flex-col gap-8 px-16 py-8">
                 {project?.takeaways.map(takeaway => {
                   return (
-                    <li key={takeaway} className="pl-12 text-sm font-semibold text-snow">
+                    <li key={takeaway} className="pl-12 text-sm font-medium text-neutral-1100">
                       {takeaway}
                     </li>
                   )
