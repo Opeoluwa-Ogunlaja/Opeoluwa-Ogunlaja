@@ -12,12 +12,8 @@ import { wait } from '../utilities'
 
 const contactFormSchema = yup.object({
   name: yup.string(),
-  email: yup.string().email('Email must be a valid email').required('Email is required'),
-  message: yup
-    .string()
-    .max(32, 'Password cannot be more than 32 characters long')
-    .min(2, 'Password must be more than 8 characters long')
-    .required('Password is required')
+  email: yup.string().email('Email must be a valid email').required('Please input your email'),
+  message: yup.string().required('Please write a message')
 })
 
 const ContactForm = () => {
