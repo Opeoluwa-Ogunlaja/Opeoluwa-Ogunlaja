@@ -36,7 +36,7 @@ const ContactForm = () => {
   watch('message')
 
   return (
-    <form className="grid gap-16 max-sm:w-full sm:min-w-[342px]" onSubmit={handleSubmit(onSubmit)}>
+    <form className="grid gap-16 max-md:w-full md:min-w-[342px]" onSubmit={handleSubmit(onSubmit)}>
       <div>
         <TextField
           placeholder="Email"
@@ -64,7 +64,7 @@ const ContactForm = () => {
         />
         {errors?.message?.message && <span className="text-red">{errors?.message?.message}</span>}
       </div>
-      <Button className="px-16 max-sm:w-full sm:w-fit">Contact Me</Button>
+      <Button className="px-16 max-md:w-full md:w-fit">Contact Me</Button>
     </form>
   )
 }
