@@ -2,6 +2,72 @@ import React from 'react'
 import { TextAreaField, TextField } from '../components/InputFields'
 import Button from '../components/Button'
 import { twMerge } from 'tailwind-merge'
+import { AtIcon, MessageTextSquareIcon, UsersIcon } from '../assets/icons'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
+import { useForm } from 'react-hook-form'
+
+const contactFormSchema = yup.object({
+  name: yup.string(),
+  email: yup.string().email('Email must be a valid email').required('Email is required'),
+  message: yup
+    .string()
+    .max(32, 'Password cannot be more than 32 characters long')
+    .min(2, 'Password must be more than 8 characters long')
+    .required('Password is required')
+})
+
+const ContactForm = () => {
+  const {
+    register,
+    handleSubmit,
+    setError,
+    watch,
+    clearErrors,
+    formState: { errors }
+  } = useForm({
+    resolver: yupResolver(contactFormSchema)
+  })
+
+  const onSubmit = () => {}
+
+  watch('name')
+  watch('email')
+  watch('message')
+
+  return (
+    <form className="grid gap-16 max-sm:w-full sm:min-w-[342px]" onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <TextField
+          placeholder="Email"
+          {...register('email')}
+          className="w-full bg-opacity-80"
+          icon={AtIcon}
+        />
+        {errors?.email?.message && <span className="text-red">{errors?.email?.message}</span>}
+      </div>
+      <div>
+        <TextField
+          placeholder="Name"
+          {...register('name')}
+          className="w-full bg-opacity-80"
+          icon={UsersIcon}
+        />
+        {errors?.name?.message && <span className="text-red">{errors?.name?.message}</span>}
+      </div>
+      <div>
+        <TextAreaField
+          placeholder="How may I help you?"
+          className="w-full bg-opacity-80"
+          {...register('message')}
+          icon={MessageTextSquareIcon}
+        />
+        {errors?.message?.message && <span className="text-red">{errors?.message?.message}</span>}
+      </div>
+      <Button className="px-16 max-sm:w-full sm:w-fit">Contact Me</Button>
+    </form>
+  )
+}
 
 const Form_Section = ({ className }) => {
   return (
@@ -15,12 +81,7 @@ const Form_Section = ({ className }) => {
         Need <strong className="text-green">help</strong> with something?
       </h3>
       <div className="form-grid grid place-content-around place-items-center gap-32">
-        <form className="grid gap-16 max-sm:w-full sm:min-w-[342px]">
-          <TextField placeholder="Email" className="w-full" />
-          <TextField placeholder="Name" className="w-full" />
-          <TextAreaField placeholder="How may I help you?" className="w-full" />
-          <Button className="px-16 max-sm:w-full sm:w-fit">Contact Me</Button>
-        </form>
+        <ContactForm />
         <div className="flex h-full flex-col items-center gap-32 self-stretch justify-self-stretch rounded-lg border border-green bg-neutral-9400 bg-opacity-40 px-16 py-32  font-axiforma sm:min-w-[276px]">
           <strong className="text-center text-lg font-medium text-white">
             Here to help you build the best products

@@ -66,6 +66,7 @@ export const projects = [
   {
     image: MindmazeImage,
     title: 'Mindmaze',
+    link: 'https://mindmaze-nine.vercel.app',
     description:
       'A memory game built with the react javascript library with a plethora of features.',
     takeaways: [

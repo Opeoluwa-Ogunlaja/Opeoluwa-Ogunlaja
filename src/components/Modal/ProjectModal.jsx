@@ -4,8 +4,6 @@ import { useModalState } from '../../hooks/useModalState'
 import { sideRight } from './../../data/animations'
 import { Link } from 'react-router-dom'
 import Button from '../Button'
-import TechPill from '../TechPill'
-import { tagFromTitle } from '../../data/data'
 import { twMerge } from 'tailwind-merge'
 
 const ProjectModal = () => {
@@ -29,7 +27,7 @@ const ProjectModal = () => {
               See all projects
             </Link>
           </header>
-          <section className="flex w-full scroll-py-16 flex-col items-start justify-start gap-16 overflow-y-auto text-start max-sm:p-24 sm:p-32">
+          <section className="flex w-full scroll-py-8 flex-col items-start justify-start gap-16 overflow-y-auto py-16 text-start max-sm:px-24 sm:px-32">
             <div className="mt-32 space-y-24">
               <div className="contents">
                 <h3 className="font-axiforma text-3xl font-bold text-white">{project?.title}</h3>
@@ -72,7 +70,9 @@ const ProjectModal = () => {
             </div>
           </section>
           <footer className="bottom-0 z-30 h-48">
-            <Button className="h-full w-full rounded-[none]">Visit site</Button>
+            <a href={project?.link} target="_blank" className="w-full">
+              <Button className="h-full w-full rounded-[none]">Visit site</Button>
+            </a>
           </footer>
         </div>
       </div>

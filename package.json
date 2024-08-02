@@ -32,13 +32,16 @@
     "vite-plugin-svgr": "^4.2.0"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.52.1",
     "react-router-dom": "^6.23.1",
     "react-vertical-timeline-component": "^3.6.0",
-    "tailwind-merge": "^2.3.0"
+    "tailwind-merge": "^2.3.0",
+    "yup": "^1.4.0"
   }
 }
