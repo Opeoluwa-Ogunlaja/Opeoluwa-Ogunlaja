@@ -78,7 +78,20 @@ const Form_Section = ({ className }) => {
       )}
     >
       <h3 className="text-pretty text-center font-axiforma text-white max-sm:text-3xl sm:text-5xl">
-        Need <strong className="text-green">help</strong> with something?
+        {(() => {
+          const headlines = [
+            <>
+              Want to <strong className="text-green">Innovate</strong> together?
+            </>,
+            <>
+              Ready to Start Something <strong className="text-green">Great</strong>?
+            </>,
+            <>
+              Let's Make <strong className="text-green">Magic</strong> Happen!
+            </>
+          ]
+          return headlines[Math.floor(Math.random() * headlines.length)]
+        })()}
       </h3>
       <div className="form-grid grid place-content-around place-items-center gap-32">
         <ContactForm />
