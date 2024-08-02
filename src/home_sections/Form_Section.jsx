@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import React, { useRef, useState } from 'react'
 import { TextAreaField, TextField } from '../components/InputFields'
 import Button from '../components/Button'
@@ -31,8 +32,10 @@ const ContactForm = () => {
   } = useForm({
     resolver: yupResolver(contactFormSchema)
   })
+  const [successMsg, setSuccessMsg] = useState(false)
   const formRef = useRef()
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const successMessage = "Thank you for contacting me. I'll get back to you as soon as possible"
 
   const onSubmit = async () => {
     if (isSubmitting) return
@@ -48,10 +51,17 @@ const ContactForm = () => {
         }
       )
       reset({})
+      setSuccessMsg(true)
+
+      await wait(3000)
+
+      setSuccessMsg(false)
     } catch (error) {
       setError('root', error)
+
       alert(error)
-      await wait(3000)
+
+      await wait(2000)
       clearErrors('root')
     }
 
@@ -65,9 +75,21 @@ const ContactForm = () => {
   return (
     <form
       ref={formRef}
-      className="grid gap-16 max-md:w-full md:min-w-[342px]"
+      className="relative grid gap-16 max-md:w-full md:min-w-[342px]"
       onSubmit={handleSubmit(onSubmit)}
     >
+      <AnimatePresence>
+        {successMsg && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute z-50 justify-self-center rounded-sm bg-neutral-1300 p-24 font-bold text-green shadow-lg md:translate-x-1/2"
+          >
+            {successMessage}
+          </motion.div>
+        )}
+      </AnimatePresence>
       {errors?.root && (
         <h3 className="max-w-full text-center font-bold text-red">
           Sorry, The message wasn't sent
