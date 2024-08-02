@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { TextAreaField, TextField } from '../components/InputFields'
 import Button from '../components/Button'
 import { twMerge } from 'tailwind-merge'
@@ -6,6 +6,8 @@ import { AtIcon, MessageTextSquareIcon, UsersIcon } from '../assets/icons'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { useForm } from 'react-hook-form'
+import emailjs from '@emailjs/browser'
+import { wait } from '../utilities'
 
 const contactFormSchema = yup.object({
   name: yup.string(),
@@ -24,22 +26,57 @@ const ContactForm = () => {
     setError,
     watch,
     clearErrors,
+    reset,
     formState: { errors }
   } = useForm({
     resolver: yupResolver(contactFormSchema)
   })
+  const formRef = useRef()
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const onSubmit = () => {}
+  const onSubmit = async () => {
+    if (isSubmitting) return
+    setIsSubmitting(true)
+
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICEID,
+        import.meta.env.VITE_EMAILJS_TEMPLATEID,
+        formRef.current,
+        {
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLICID
+        }
+      )
+      reset({})
+    } catch (error) {
+      setError('root', error)
+      alert(error)
+      await wait(3000)
+      clearErrors('root')
+    }
+
+    setIsSubmitting(false)
+  }
 
   watch('name')
   watch('email')
   watch('message')
 
   return (
-    <form className="grid gap-16 max-md:w-full md:min-w-[342px]" onSubmit={handleSubmit(onSubmit)}>
+    <form
+      ref={formRef}
+      className="grid gap-16 max-md:w-full md:min-w-[342px]"
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      {errors?.root && (
+        <h3 className="max-w-full text-center font-bold text-red">
+          Sorry, The message wasn't sent
+        </h3>
+      )}
       <div>
         <TextField
           placeholder="Email"
+          name="email"
           {...register('email')}
           className="w-full bg-opacity-80"
           icon={AtIcon}
@@ -49,6 +86,7 @@ const ContactForm = () => {
       <div>
         <TextField
           placeholder="Name"
+          name="name"
           {...register('name')}
           className="w-full bg-opacity-80"
           icon={UsersIcon}
@@ -64,7 +102,9 @@ const ContactForm = () => {
         />
         {errors?.message?.message && <span className="text-red">{errors?.message?.message}</span>}
       </div>
-      <Button className="px-16 max-md:w-full md:w-fit">Contact Me</Button>
+      <Button disabled={isSubmitting} className="px-16 max-md:w-full md:w-fit">
+        Contact Me
+      </Button>
     </form>
   )
 }

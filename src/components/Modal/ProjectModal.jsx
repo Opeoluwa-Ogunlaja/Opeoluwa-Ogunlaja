@@ -36,7 +36,7 @@ const ProjectModal = () => {
               <img src={project?.image} alt={`${project?.title} logo`} className="h-192 w-full" />
             </div>
             <div className="mt-16 flex flex-col gap-8">
-              <h3 className="font-bold text-neutral-1200">Tools</h3>
+              <h3 className="font-semibold text-neutral-1200">Tech and Features</h3>
               <div className="flex flex-wrap gap-8">
                 {project?.sellingPoint.map(point => {
                   const possibleColors = ['skyblue', 'lightgreen', 'yellow', 'coral', 'butter']
@@ -57,7 +57,7 @@ const ProjectModal = () => {
               </div>
             </div>
             <div className="mt-16 flex flex-col gap-8">
-              <h3 className="font-bold text-neutral-1200">Key takeaways</h3>
+              <h3 className="font-semibold text-neutral-1200">Key takeaways</h3>
               <ul className="code-list flex flex-col gap-8 px-16 py-8">
                 {project?.takeaways.map(takeaway => {
                   return (

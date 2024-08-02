@@ -32,6 +32,7 @@
     "vite-plugin-svgr": "^4.2.0"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^3.9.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
