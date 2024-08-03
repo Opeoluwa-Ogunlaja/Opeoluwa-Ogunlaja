@@ -46,12 +46,17 @@ const ContactForm = () => {
           publicKey: import.meta.env.VITE_EMAILJS_PUBLICID
         }
       )
-      reset({})
+
       setSuccessMsg(true)
 
       await wait(3000)
 
       setSuccessMsg(false)
+      reset({
+        email: '',
+        name: '',
+        message: ''
+      })
     } catch (error) {
       setError('root', error)
 

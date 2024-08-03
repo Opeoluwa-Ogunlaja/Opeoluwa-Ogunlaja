@@ -10,7 +10,7 @@ import { twMerge } from 'tailwind-merge'
  */ import { motion } from 'framer-motion'
 
 const button = cva(
-  'cta-btn p-12 font-semibold rounded-sm max-lg:text-14 text-16 font-axiforma transition-all shadow-md',
+  'cta-btn p-12 font-semibold rounded-sm max-lg:text-14 text-16 font-axiforma transition-all shadow-md disabled:bg-opacity-20',
   {
     variants: {
       color: {
