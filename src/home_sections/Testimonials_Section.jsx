@@ -4,7 +4,44 @@ import SectionHeading from '../components/SectionHeading'
 import TestimonialCard from '../components/TestimonialCard'
 import { testimonials } from '../data/data'
 import { twMerge } from 'tailwind-merge'
-import { InfiniteMovingCards } from './../components/InfiniteCards'
+import { Carousel } from 'react-responsive-carousel'
+import { ArrowLeftIcon, ArrowRightIcon } from '../assets/icons'
+
+const Dot = (clickHandler, isSelected) => {
+  return (
+    <button
+      onClick={clickHandler}
+      className={`mx-4 aspect-square w-12 rounded-full border-2 border-neutral-1100 transition-all ${
+        isSelected ? 'scale-110 bg-neutral-1300' : 'bg-white'
+      }`}
+    ></button>
+  )
+}
+
+const CtrlBtn = (clickHandler, className, elem) => (
+  <button
+    onClick={clickHandler}
+    className={twMerge(
+      `absolute top-1/2 z-30 mx-4 grid aspect-square w-fit -translate-y-1/2 place-content-center rounded-full bg-neutral-1300 bg-opacity-40 p-16 text-white shadow-lg transition-all hover:scale-125`,
+      className
+    )}
+  >
+    {elem}
+  </button>
+)
+
+const CtrlIcon = direction => {
+  let className = 'aspect-square w-6'
+  return direction == 'left' ? (
+    <ArrowLeftIcon className={className} />
+  ) : (
+    <ArrowRightIcon className={className} />
+  )
+}
+
+const PrevBtn = clickHandler => CtrlBtn(clickHandler, 'left-[0]', CtrlIcon('left'))
+
+const NextBtn = clickHandler => CtrlBtn(clickHandler, 'right-[0]', CtrlIcon('right'))
 
 const Testimonials_Section = ({ className }) => {
   return (
@@ -19,14 +56,31 @@ const Testimonials_Section = ({ className }) => {
         subHeading={'What my previous clients have to say about me'}
         className={'flex flex-col items-center justify-center text-center'}
       />
-      <div className="rounded-md relative mt-48 flex h-[50vh] flex-col items-center justify-center overflow-hidden antialiased md:px-32">
-        <InfiniteMovingCards
-          items={testimonials}
+      <div className="relative mt-48 grid h-[50vh] grid-rows-1 items-center justify-center overflow-hidden antialiased md:px-32">
+        {/* <InfiniteMovingCards
+         items={testimonials}
           innerShadow={true}
           direction="left"
           speed="fast"
-          renderedElement={TestimonialCard}
-        />
+         renderedElement={TestimonialCard}
+       /> */}
+        <Carousel
+          autoPlay={true}
+          interval={2000}
+          centerMode={true}
+          centerSlidePercentage={100}
+          showThumbs={false}
+          infiniteLoop={true}
+          renderArrowPrev={PrevBtn}
+          renderArrowNext={NextBtn}
+          renderIndicator={Dot}
+          showStatus={false}
+          className="absolute inset-[0] w-full"
+        >
+          {testimonials.map((testimonial, i) => {
+            return <TestimonialCard key={`${testimonial.title}${i}`} {...testimonial} />
+          })}
+        </Carousel>
       </div>
     </section>
   )

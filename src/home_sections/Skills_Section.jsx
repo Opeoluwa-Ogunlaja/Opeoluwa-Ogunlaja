@@ -3,10 +3,17 @@ import SectionHeading from '../components/SectionHeading'
 import { skills } from '../data/data'
 import SkillCard from '../components/SkillCard'
 import { twMerge } from 'tailwind-merge'
+import { motion } from 'framer-motion'
+import { container } from '../data/animations'
 
 const Skills_Section = ({ className }) => {
   return (
-    <section className={twMerge('skills-section max-lg:mt-192 lg:mt-128', className)}>
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      variants={container}
+      className={twMerge('skills-section max-lg:mt-192 lg:mt-128', className)}
+    >
       <SectionHeading
         heading={'Skills and Tools'}
         subHeading={
@@ -18,7 +25,7 @@ const Skills_Section = ({ className }) => {
           return <SkillCard {...skill} key={skill.title} />
         })}
       </div>
-    </section>
+    </motion.section>
   )
 }
 

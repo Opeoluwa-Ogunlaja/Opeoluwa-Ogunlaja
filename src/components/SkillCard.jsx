@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 const SkillCard = ({ icon: Icon, title, subtitle, type }) => {
   return (
-    <div className="skill relative" key={title}>
+    <motion.div className="skill relative" key={title}>
       <button className="flex aspect-square w-48  items-center justify-center rounded-sm bg-neutral-9300 bg-opacity-70">
         {typeof Icon !== 'string' ? (
           <Icon className={'aspect-square w-32 drop-shadow-lg'} />
@@ -23,7 +23,7 @@ const SkillCard = ({ icon: Icon, title, subtitle, type }) => {
         <span className="text-neutral-9200">{type}</span>
         <p className="max-w-[50ch] text-neutral-1100">{subtitle}</p>
       </motion.div>
-    </div>
+    </motion.div>
   )
 }
 

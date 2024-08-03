@@ -16,6 +16,8 @@ import AtIcon from './at.svg?react'
 import FacebookIcon from './facebook.svg?react'
 import InstagramIcon from './instagram.svg?react'
 import NodeJSLogo from './nodejs.svg?react'
+import ArrowLeftIcon from './arrow-left.svg?react'
+import ArrowRightIcon from './arrow-right.svg?react'
 
 export {
   FullLogo,
@@ -35,5 +37,7 @@ export {
   AtIcon,
   FacebookIcon,
   InstagramIcon,
-  NodeJSLogo
+  NodeJSLogo,
+  ArrowLeftIcon,
+  ArrowRightIcon
 }

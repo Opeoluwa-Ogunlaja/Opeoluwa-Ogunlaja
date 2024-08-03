@@ -3,8 +3,8 @@ import { TestimonialQuoteIcon } from '../assets/icons'
 
 const TestimonialCard = ({ name, image, role, title, organisation, review }) => {
   return (
-    <div className="relative w-[300px] rounded-lg bg-neutral-9500 bg-opacity-85 px-32 pb-24 pt-48 text-snow hover:scale-[1.02]">
-      <div className="absolute left-[0] top-[0] translate-x-1/4 select-none">
+    <div className="relative isolate mx-auto w-[300px] rounded-lg bg-neutral-9500 bg-opacity-85 px-32 pb-24 pt-48 text-left text-snow hover:scale-[1.02]">
+      <div className="absolute left-[0] top-[0] -z-10 translate-x-1/4 select-none">
         <TestimonialQuoteIcon className="select-none" />
       </div>
       <header className="flex items-center gap-8">
@@ -12,7 +12,7 @@ const TestimonialCard = ({ name, image, role, title, organisation, review }) => 
           <img
             src={image}
             alt={`${name} - ${role}`}
-            className="aspect-square w-32 rounded-full shadow-inner"
+            className="aspect-square !w-[56px] rounded-full shadow-inner"
           />
         </div>
         <div>

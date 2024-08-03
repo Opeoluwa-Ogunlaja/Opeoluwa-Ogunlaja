@@ -93,7 +93,7 @@ const ContactForm = () => {
       </AnimatePresence>
       {errors?.root && (
         <h3 className="max-w-full text-center font-bold text-red">
-          Sorry, The message wasn't sent
+          Sorry, The message wasn't sent. <br /> Please check your connection
         </h3>
       )}
       <div>
@@ -136,7 +136,7 @@ const Form_Section = ({ className }) => {
   return (
     <section
       className={twMerge(
-        'form-section mt-24 flex flex-col items-center max-sm:gap-24 sm:gap-64',
+        'form-section flex flex-col items-center max-sm:gap-24 sm:gap-64',
         className
       )}
     >
