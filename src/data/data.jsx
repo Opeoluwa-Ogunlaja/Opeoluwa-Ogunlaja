@@ -104,6 +104,14 @@ export const experience = [
       'Building web applications for different niches and businesses',
       'Giving multiple businesses an online presence'
     ]
+  },
+  {
+    icon: 'https://media.licdn.com/dms/image/v2/D4D0BAQGwjt9O3PlfhQ/company-logo_200_200/company-logo_200_200/0/1724086431276/atobue_logo?e=1732752000&v=beta&t=dPzKA3KvinWCD1Ot3N9qecI22LQrCWx5N4Gg-8o9jiY',
+    date: '2024 - Present',
+    company_name: 'Atobue',
+    title: 'Backend Developer',
+    color: '#000011',
+    points: ['Developing the full backend infrastructure of the website']
   }
 ]
 
