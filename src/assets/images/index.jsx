@@ -1,4 +1,5 @@
 import MindmazeImage from './mindmaze-image.png'
+import MonerchyImage from './monerchy-image.png'
 import NodeJSLogoImage from './nodejs-logo.png'
 import PHPLogoImage from './php.png'
 import GoogleCloudLogoImage from './googlecloud.png'
@@ -8,6 +9,7 @@ import JSLogoImage from './javascript.png'
 
 export {
   MindmazeImage,
+  MonerchyImage,
   NodeJSLogoImage,
   PHPLogoImage,
   GoogleCloudLogoImage,

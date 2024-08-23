@@ -13,6 +13,7 @@ import {
   HTML5LogoImage,
   JSLogoImage,
   MindmazeImage,
+  MonerchyImage,
   NodeJSLogoImage,
   PHPLogoImage
 } from '../assets/images'
@@ -75,6 +76,20 @@ export const projects = [
     ],
     sellingPoint: ['Chakra UI', 'Game', 'Responsive', 'Reactive', 'Engaging'],
     tags: ['game', 'react']
+  },
+  {
+    image: MonerchyImage,
+    title: 'Monerchy',
+    link: 'https://monerchy.vercel.app',
+    description:
+      'An expense tracker built with the react javascript library to manage income and expenses.',
+    takeaways: [
+      'Learnt to implement basic auth strategies',
+      'Learnt to work with the tailwindCSS library',
+      'Learnt basic redux for authentication and state management'
+    ],
+    sellingPoint: ['TailwindCSS', 'Utility site', 'Responsive', 'Reactive', 'Useful'],
+    tags: ['website', 'react']
   }
 ]
 

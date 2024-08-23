@@ -15,8 +15,12 @@ const ProjectCard = ({ image, title, description, tags }) => {
       onClick={handleClick}
       className="flex cursor-pointer flex-col gap-16 rounded-sm bg-neutral-9400 bg-opacity-80 p-12 transition-transform hover:scale-105"
     >
-      <div className="grid place-content-center rounded-sm">
-        <img src={image} alt="project image" className="max-h-192 w-full object-cover" />
+      <div className="grid h-[192px] place-content-center overflow-hidden rounded-sm">
+        <img
+          src={image}
+          alt="project image"
+          className="max-h-192 w-full rounded-[inherit] object-cover"
+        />
       </div>
       <div className="flex flex-col gap-8">
         <h3 className="text-xl text-white">{title}</h3>
