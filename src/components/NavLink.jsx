@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
 const navlink = cva(
-  'nav-link relative text-16 max-sm:text-14 font-quicksand flex items-center text-pretty text-center text-neutral-1200 text-neutral-9200 transition-all hover:dark:text-purple hover:text-green'
+  'nav-link relative text-16 max-sm:text-14 font-quicksand flex items-center text-pretty text-center text-neutral-1100 transition-all hover:dark:text-purple hover:text-green'
 )
 
 const Navlink = ({ children, className, to, activeClass }) => {

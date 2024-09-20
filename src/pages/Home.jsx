@@ -36,24 +36,25 @@ const Home = () => {
           <h4 className="text-neutral-9200">Connect</h4>
           <ul>
             <li>
-              <a href="">LinkedIn</a>
+              <a href="http://www.linkedin.com/in/o-opeoluwa" target="_blank">
+                LinkedIn
+              </a>
             </li>
             <li>
-              <a href="">Twitter</a>
-            </li>
-            <li>
-              <a href="">Facebook</a>
+              <a href="https://x.com/Ope_oluwa_77" target="_blank">
+                X
+              </a>
             </li>
           </ul>
         </div>
         <ul className="flex gap-8 max-md:mt-24 max-md:justify-center md:ml-auto">
           <li>
-            <a href="">
+            <a href="https://web.facebook.com/profile.php?id=100075021142594" target="_blank">
               <FacebookIcon className="scale-75" />
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="https://www.instagram.com/_ope._.oluwa_/" target="_blank">
               <InstagramIcon className="scale-75" />
             </a>
           </li>

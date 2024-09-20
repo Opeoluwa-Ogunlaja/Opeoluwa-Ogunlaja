@@ -30,7 +30,7 @@ const Topnav = () => {
 
       <motion.div
         className={twMerge(
-          'z-[3000000] ml-auto flex items-center gap-16 font-quicksand transition max-md:invisible max-md:absolute max-md:inset-x-[0] max-md:mt-128 max-md:w-max max-md:-translate-x-24 max-md:translate-y-24 max-md:flex-col max-md:rounded-lg max-md:bg-neutral-1400 max-md:px-32 max-md:py-16 max-md:opacity-0 md:w-fit',
+          'z-[3000000] ml-auto flex items-center gap-24 font-quicksand transition max-md:invisible max-md:absolute max-md:inset-x-[0] max-md:mt-128 max-md:w-max max-md:-translate-x-24 max-md:translate-y-24 max-md:flex-col max-md:rounded-lg max-md:bg-neutral-1400 max-md:px-32 max-md:py-16 max-md:opacity-0 md:w-fit',
           clsx({ ['visible max-md:opacity-100']: isOpen })
         )}
         ref={navRef}
