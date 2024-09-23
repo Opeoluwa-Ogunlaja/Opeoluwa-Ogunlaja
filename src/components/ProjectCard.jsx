@@ -13,7 +13,7 @@ const ProjectCard = ({ image, title, description, tags }) => {
   return (
     <div
       onClick={handleClick}
-      className="flex cursor-pointer flex-col gap-16 rounded-sm bg-neutral-9400 bg-opacity-80 p-12 transition-transform hover:scale-105"
+      className="flex cursor-pointer flex-col gap-16 rounded-sm bg-neutral-9500 bg-opacity-30 px-16 py-8 transition-transform hover:scale-105"
     >
       <div className="grid h-[192px] place-content-center overflow-hidden rounded-sm">
         <img

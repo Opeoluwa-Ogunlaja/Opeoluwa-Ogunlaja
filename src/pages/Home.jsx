@@ -61,7 +61,7 @@ const Home = () => {
         </ul>
         <div className="absolute inset-x-[0] bottom-32 flex justify-center gap-24 max-md:mt-16">
           <Navlink to="/">Home</Navlink>
-          <Navlink to="/home">About</Navlink>
+          <Navlink to="/about">About</Navlink>
         </div>
         <span className="absolute inset-x-[0] bottom-[0] text-center text-xs">
           Copyright &copy; {new Date().getFullYear()}.{' '}
