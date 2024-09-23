@@ -43,18 +43,20 @@ const Typewriter = ({ ...rest }) => {
     }
   }, [done])
 
+  const animationCompleteHandler = () => {
+    counter.current++
+    index.current = counter.current % 2 == 0 ? index.current + 1 : index.current
+    if (index.current >= titleOptions.length) index.current = 0
+    setDone(done => !done)
+  }
+
   return (
     <motion.h3
       key={text}
       variants={sentenceVariants}
       initial="hidden"
       animate={done ? 'hidden' : 'visible'}
-      onAnimationComplete={() => {
-        counter.current++
-        index.current = counter.current % 2 == 0 ? index.current + 1 : index.current
-        if (index.current >= titleOptions.length) index.current = 0
-        setDone(done => !done)
-      }}
+      onAnimationComplete={animationCompleteHandler}
       {...rest}
     >
       {text.split('').map((char, i) => (
