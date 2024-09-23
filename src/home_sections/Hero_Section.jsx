@@ -3,7 +3,15 @@ import React, { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { InfiniteMovingCards } from '../components/InfiniteCards'
 import Button from '../components/Button'
-import { ReactLogo } from '../assets/icons'
+import {
+  DockerLogo,
+  FigmaLogo,
+  GitLogo,
+  JSLogo,
+  MongodbLogo,
+  NodeJSLogo,
+  ReactLogo
+} from '../assets/icons'
 import { characteristics } from '../data/data'
 import CharacterCard from '../components/CharacterCard'
 import { useModalUpdate } from './../hooks/useModalUpdate'
@@ -67,19 +75,19 @@ const Home_Section = ({ className }) => {
                   <ReactLogo />
                 </div>
                 <div className={twMerge('face face2', faceClassName)}>
-                  <ReactLogo />
+                  <FigmaLogo />
                 </div>
                 <div className={twMerge('face face3', faceClassName)}>
-                  <ReactLogo />
+                  <NodeJSLogo />
                 </div>
                 <div className={twMerge('face face4', faceClassName)}>
-                  <ReactLogo />
+                  <JSLogo />
                 </div>
                 <div className={twMerge('face face5', faceClassName)}>
-                  <ReactLogo />
+                  <GitLogo />
                 </div>
                 <div className={twMerge('face face6', faceClassName)}>
-                  <ReactLogo />
+                  <MongodbLogo />
                 </div>
               </>
             )

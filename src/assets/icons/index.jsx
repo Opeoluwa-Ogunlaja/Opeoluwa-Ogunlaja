@@ -16,6 +16,11 @@ import AtIcon from './at.svg?react'
 import FacebookIcon from './facebook.svg?react'
 import InstagramIcon from './instagram.svg?react'
 import NodeJSLogo from './nodejs.svg?react'
+import JSLogo from './js.svg?react'
+import MongodbLogo from './mongodb.svg?react'
+import GitLogo from './git.svg?react'
+import DockerLogo from './docker.svg?react'
+import FigmaLogo from './figma.svg?react'
 import ArrowLeftIcon from './arrow-left.svg?react'
 import ArrowRightIcon from './arrow-right.svg?react'
 
@@ -39,5 +44,10 @@ export {
   InstagramIcon,
   NodeJSLogo,
   ArrowLeftIcon,
-  ArrowRightIcon
+  ArrowRightIcon,
+  DockerLogo,
+  FigmaLogo,
+  JSLogo,
+  GitLogo,
+  MongodbLogo
 }
