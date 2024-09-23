@@ -81,13 +81,13 @@ const Home_Section = ({ className }) => {
                   <NodeJSLogo />
                 </div>
                 <div className={twMerge('face face4', faceClassName)}>
-                  <JSLogo />
+                  <MongodbLogo />
                 </div>
                 <div className={twMerge('face face5', faceClassName)}>
                   <GitLogo />
                 </div>
                 <div className={twMerge('face face6', faceClassName)}>
-                  <MongodbLogo />
+                  <JSLogo />
                 </div>
               </>
             )
