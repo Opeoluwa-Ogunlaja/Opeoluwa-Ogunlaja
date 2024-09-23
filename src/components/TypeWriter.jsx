@@ -4,7 +4,7 @@ import { useLayoutEffect, useRef, useState } from 'react'
 export const sentenceVariants = {
   hidden: {
     transition: {
-      delay: 1,
+      delayChildren: 2,
       staggerChildren: 0.17,
       staggerDirection: -1
     }
