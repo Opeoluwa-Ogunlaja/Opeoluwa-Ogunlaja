@@ -75,7 +75,7 @@ const Home_Section = ({ className }) => {
                   <ReactLogo />
                 </div>
                 <div className={twMerge('face face2', faceClassName)}>
-                  <FigmaLogo />
+                  <FigmaLogo className="scale-85" />
                 </div>
                 <div className={twMerge('face face3', faceClassName)}>
                   <NodeJSLogo />
