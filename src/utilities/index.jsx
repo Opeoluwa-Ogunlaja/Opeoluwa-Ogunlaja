@@ -6,3 +6,16 @@ export const wait = async delay => {
     }, delay)
   })
 }
+
+export const throttle = (func, delay) => {
+  let prev = 0
+
+  return (...args) => {
+    console.log('omo')
+    const now = Date.now()
+    if (now - prev > delay) {
+      prev = now
+      func(...args)
+    }
+  }
+}

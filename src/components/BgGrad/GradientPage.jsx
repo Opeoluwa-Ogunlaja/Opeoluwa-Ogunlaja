@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react'
 import './page.css'
 import { useEffect } from 'react'
 import { useAnimationFrame } from './useAnimationFrame'
+import { throttle } from '../../utilities'
 
 const InteractiveElement = () => {
   const [curX, setCurX] = useState(0)
@@ -19,10 +20,13 @@ const InteractiveElement = () => {
     reset()
   }
 
-  const eventHandler = useCallback(e => {
-    setTgX(e.clientX)
-    setTgY(e.clientY)
-  }, [])
+  const eventHandler = useCallback(
+    throttle(e => {
+      setTgX(e.clientX)
+      setTgY(e.clientY)
+    }, 500),
+    [throttle]
+  )
 
   useEffect(() => {
     window.addEventListener('mousemove', eventHandler)
