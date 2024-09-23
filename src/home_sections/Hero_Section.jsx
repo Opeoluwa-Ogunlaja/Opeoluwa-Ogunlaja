@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { InfiniteMovingCards } from '../components/InfiniteCards'
 import Button from '../components/Button'
@@ -7,10 +7,13 @@ import { ReactLogo } from '../assets/icons'
 import { characteristics } from '../data/data'
 import CharacterCard from '../components/CharacterCard'
 import { useModalUpdate } from './../hooks/useModalUpdate'
-import { container, item, itemLeft, itemRight } from '../data/animations'
+import { container, itemLeft, itemRight } from '../data/animations'
+import { useNavigate } from 'react-router-dom'
+import TypeWriter from '../components/TypeWriter'
 
 const Home_Section = ({ className }) => {
   const { openModal } = useModalUpdate()
+  const navigate = useNavigate()
 
   return (
     <motion.section
@@ -22,9 +25,7 @@ const Home_Section = ({ className }) => {
       <motion.div variants={itemLeft} className="z-0 flex flex-col gap-24 font-axiforma">
         <div className="big-text inline-block text-white max-lg:text-center">
           I'm <strong className="scale-105 text-violet">Opeoluwa</strong>, a{' '}
-          <h3 className="big-text shadow-text origin-top-left align-baseline text-green lg:inline lg:scale-105">
-            Web developer
-          </h3>
+          <TypeWriter className="big-text shadow-text origin-top-left align-baseline text-green lg:inline lg:scale-105" />
         </div>
         <p className="max-w-[70ch] font-quicksand text-white max-lg:mx-24 max-lg:text-center max-lg:text-14">
           I'm a passionate full-stack developer with 3+ years of experience crafting engaging and
@@ -48,7 +49,9 @@ const Home_Section = ({ className }) => {
           />
         </div>
         <div className="flex gap-8 max-lg:mx-auto">
-          <Button className={'w-fit'}>Get in Touch</Button>
+          <Button className={'w-fit'} onClick={() => navigate('/contact')}>
+            Get in Touch
+          </Button>
           <Button className={'w-fit'} color={'secondary'} onClick={() => openModal('resume')}>
             Check out my resume
           </Button>

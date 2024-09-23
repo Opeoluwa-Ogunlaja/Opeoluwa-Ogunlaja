@@ -25,7 +25,7 @@ const ExperienceCard = ({ experience }) => {
     >
       <div className="font-axiforma">
         <h3 className="text-lg font-bold text-white">{experience.title}</h3>
-        <p className="font-semibold text-neutral-9200" style={{ margin: 0 }}>
+        <p className="font-semibold text-green" style={{ margin: 0 }}>
           {experience.company_name}
         </p>
       </div>
