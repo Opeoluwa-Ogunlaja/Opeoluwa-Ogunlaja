@@ -34,6 +34,15 @@
     --cube-size: clamp(200px, 18vw, 300px);
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0ms !important;
+      animation-timing-function: linear !important;
+      animation-delay: 0ms !important;
+      transition-duration: 1ms !important;
+    }
+  }
+
   html {
     scroll-behavior: smooth;
   }
