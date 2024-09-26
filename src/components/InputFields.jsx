@@ -3,7 +3,7 @@ import React, { forwardRef, useId } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 const generalClass =
-  'rounded-sm border-2 border-green bg-neutral-9400 text-neutral-1100 placeholder:text-neutral-1200'
+  'rounded-sm border border-green bg-neutral-9400 text-neutral-1100 placeholder:text-neutral-1200'
 const iconStyle = 'absolute z-30 self-center text-green m-16 scale-75'
 export const TextField = forwardRef((props, ref) => {
   const { className, icon: Icon, ...htmlProps } = props

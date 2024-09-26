@@ -2,6 +2,7 @@ import React from 'react'
 import TechPill from './TechPill'
 import { projectFromTitle, tagFromTitle } from '../data/data'
 import { useModalUpdate } from '../hooks/useModalUpdate'
+import { motion } from 'framer-motion'
 
 const ProjectCard = ({ image, title, description, tags }) => {
   const { openModal } = useModalUpdate()
@@ -11,7 +12,12 @@ const ProjectCard = ({ image, title, description, tags }) => {
   }
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0.5 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        duration: 1
+      }}
       onClick={handleClick}
       className="flex cursor-pointer flex-col rounded-sm bg-neutral-9500 bg-opacity-30 px-16 py-12 transition-transform hover:scale-105"
     >
@@ -31,7 +37,7 @@ const ProjectCard = ({ image, title, description, tags }) => {
           <TechPill key={tag} {...tagFromTitle(tag)} />
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }
 

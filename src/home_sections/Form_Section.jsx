@@ -101,7 +101,7 @@ const ContactForm = () => {
           placeholder="Email"
           name="email"
           {...register('email')}
-          className="w-full bg-opacity-80"
+          className="w-full bg-opacity-60"
           icon={AtIcon}
         />
         {errors?.email?.message && <span className="text-red">{errors?.email?.message}</span>}
@@ -111,7 +111,7 @@ const ContactForm = () => {
           placeholder="Name"
           name="name"
           {...register('name')}
-          className="w-full bg-opacity-80"
+          className="w-full bg-opacity-60"
           icon={UsersIcon}
         />
         {errors?.name?.message && <span className="text-red">{errors?.name?.message}</span>}
@@ -119,7 +119,7 @@ const ContactForm = () => {
       <div>
         <TextAreaField
           placeholder="How may I help you?"
-          className="w-full bg-opacity-80"
+          className="w-full bg-opacity-60"
           {...register('message')}
           icon={MessageTextSquareIcon}
         />

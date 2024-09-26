@@ -47,7 +47,7 @@ const Home = () => {
             </li>
           </ul>
         </div>
-        <ul className="flex gap-8 max-md:mt-24 max-md:justify-center md:ml-auto">
+        <ul className="mb-48 flex gap-8 max-md:mt-24 max-md:justify-center md:ml-auto">
           <li>
             <a href="https://web.facebook.com/profile.php?id=100075021142594" target="_blank">
               <FacebookIcon className="scale-75" />
@@ -59,7 +59,7 @@ const Home = () => {
             </a>
           </li>
         </ul>
-        <div className="absolute inset-x-[0] bottom-32 flex justify-center gap-24 max-md:mt-16">
+        <div className="absolute inset-x-[0] bottom-48 flex justify-center gap-24 max-md:mt-16">
           <Navlink to="/">Home</Navlink>
           <Navlink to="/about">About</Navlink>
         </div>
