@@ -24,7 +24,7 @@ const InteractiveElement = () => {
     throttle(e => {
       setTgX(e.clientX)
       setTgY(e.clientY)
-    }, 500),
+    }, 250),
     [throttle]
   )
 
