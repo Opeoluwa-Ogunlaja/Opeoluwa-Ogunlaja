@@ -1,18 +1,11 @@
 import React, { useCallback, useState } from 'react'
 import './page.css'
 import { useEffect } from 'react'
-import { useAnimationFrame } from './useAnimationFrame'
 import { throttle } from '../../utilities'
 
 const InteractiveElement = () => {
   const [tgX, setTgX] = useState(0)
   const [tgY, setTgY] = useState(0)
-
-  // const [reset] = useAnimationFrame(
-  //   throttle(() => {
-  //     move()
-  //   }, 500)
-  // )
 
   function move(e) {
     setTgX(e.clientX)
@@ -33,7 +26,7 @@ const InteractiveElement = () => {
     <div
       className="interactive transition-all"
       style={{
-        transform: `translate(${Math.round(tgX / 20)}px, ${Math.round(tgY / 20)}px)`
+        transform: `translate(${Math.round(tgX)}px, ${Math.round(tgY)}px)`
       }}
     ></div>
   )
