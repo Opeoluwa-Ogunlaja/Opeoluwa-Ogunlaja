@@ -7,6 +7,8 @@ import {
   ReactLogo,
   UsersMultiIcon
 } from '../assets/icons'
+import { UpworkImage } from '../assets/images'
+import { AtobueImage } from '../assets/images'
 import {
   CSS3LogoImage,
   GoogleCloudLogoImage,
@@ -95,7 +97,7 @@ export const projects = [
 
 export const experience = [
   {
-    icon: 'https://www.upwork.com/favicon.ico',
+    icon: UpworkImage,
     date: '2021 - Present',
     company_name: 'Upwork',
     title: 'Fullstack Developer',
@@ -106,7 +108,7 @@ export const experience = [
     ]
   },
   {
-    icon: 'https://media.licdn.com/dms/image/v2/D4D0BAQGwjt9O3PlfhQ/company-logo_200_200/company-logo_200_200/0/1724086431276/atobue_logo?e=1732752000&v=beta&t=dPzKA3KvinWCD1Ot3N9qecI22LQrCWx5N4Gg-8o9jiY',
+    icon: AtobueImage,
     date: '2024 - Present',
     company_name: 'Atobue',
     title: 'Backend Developer',
