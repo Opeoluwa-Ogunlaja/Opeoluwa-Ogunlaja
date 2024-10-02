@@ -124,27 +124,7 @@ export const testimonials = [
     organisation: 'Agency',
     title: 'Exceeded Expectations',
     review:
-      'I thought the website for our product would be impossible to build . Till I met Opeoluwa and he proved me wrong'
-  },
-  {
-    name: 'John Doe',
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqac0kO5njric6qkMm718Qyv6G9G0WHx9BmA&s',
-    role: 'CTO at Acne.co',
-    organisation: 'Agency',
-    title: 'Exceeded Expectations',
-    review:
-      'I thought the website for our product would be impossible to build . Till I met Opeoluwa and he proved me wrong'
-  },
-  {
-    name: 'John Doe',
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqac0kO5njric6qkMm718Qyv6G9G0WHx9BmA&s',
-    role: 'CTO at Acne.co',
-    organisation: 'Agency',
-    title: 'Exceeded Expectations',
-    review:
-      'I thought the website for our product would be impossible to build . Till I met Opeoluwa and he proved me wrong'
+      'I thought the website for our product would be impossible to build, till I met Opeoluwa. He proved me wrong'
   }
 ]
 
