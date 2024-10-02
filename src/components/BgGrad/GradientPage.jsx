@@ -33,7 +33,7 @@ const InteractiveElement = () => {
     <div
       className="interactive transition-all"
       style={{
-        transform: `translate(${Math.round((tgX - current) / 20)}px, ${Math.round((tgY - current) / 20)}px)`
+        transform: `translate(${Math.round(tgX / 20)}px, ${Math.round(tgY / 20)}px)`
       }}
     ></div>
   )
