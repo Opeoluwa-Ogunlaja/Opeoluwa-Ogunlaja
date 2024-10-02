@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Modals from '../components/Modal'
 import { Outlet } from 'react-router-dom'
 
 const Layout = () => {
   return (
     <>
-      <Outlet />
+      <Suspense fallback="...loading">
+        <Outlet />
+      </Suspense>
       <Modals />
     </>
   )
