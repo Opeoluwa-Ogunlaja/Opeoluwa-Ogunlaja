@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Projects from './pages/Projects'
+// import About from './pages/About'
+// import Contact from './pages/Contact'
+// import Projects from './pages/Projects'
 import Layout from './hoc/Layout'
 
 export const routes = createBrowserRouter([
@@ -16,15 +16,24 @@ export const routes = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <About />
+        async lazy() {
+          let { default: About } = await import('./pages/About')
+          return { Component: About }
+        }
       },
       {
         path: '/contact',
-        element: <Contact />
+        async lazy() {
+          let { default: Contact } = await import('./pages/Contact')
+          return { Component: Contact }
+        }
       },
       {
         path: '/projects',
-        element: <Projects />
+        async lazy() {
+          let { default: Projects } = await import('./pages/Projects')
+          return { Component: Projects }
+        }
       }
     ]
   }

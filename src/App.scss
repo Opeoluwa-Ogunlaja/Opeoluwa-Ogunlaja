@@ -43,6 +43,10 @@
     }
   }
 
+  * {
+    font-display: swap !important;
+  }
+
   html {
     scroll-behavior: smooth;
   }
