@@ -25,6 +25,7 @@ const ProjectCard = ({ image, title, description, tags }) => {
         <img
           src={image}
           alt="project image"
+          loading="lazy"
           className="h-[136px] w-full rounded-[inherit] object-cover"
         />
       </div>

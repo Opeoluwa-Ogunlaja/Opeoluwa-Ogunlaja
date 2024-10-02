@@ -10,7 +10,7 @@ const SkillCard = ({ icon: Icon, title, subtitle, type }) => {
         {typeof Icon !== 'string' ? (
           <Icon className={'aspect-square w-32 drop-shadow-lg'} />
         ) : (
-          <img src={Icon} className="w-32 drop-shadow-lg" />
+          <img src={Icon} loading="lazy" className="w-32 drop-shadow-lg" />
         )}
       </button>
       <motion.div
