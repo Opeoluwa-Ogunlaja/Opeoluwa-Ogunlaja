@@ -8,22 +8,20 @@ export default defineConfig({
   build: {
     minify: 'terser',
     terserOptions: {
-      terserOptions: {
-        compress: {
-          drop_console: true, // Remove console statements in production
-          drop_debugger: true, // Remove debugger statements
-          passes: 2, // Multiple compression passes for better optimization
-          pure_funcs: ['console.info', 'console.debug'] // Remove specific function calls
-        },
-        mangle: {
-          toplevel: true, // Mangle top-level variable/function names
-          properties: {
-            regex: /^_/ // Mangle object properties starting with an underscore
-          }
-        },
-        format: {
-          comments: false // Remove comments
+      compress: {
+        drop_console: true, // Remove console statements in production
+        drop_debugger: true, // Remove debugger statements
+        passes: 2, // Multiple compression passes for better optimization
+        pure_funcs: ['console.info', 'console.debug'] // Remove specific function calls
+      },
+      mangle: {
+        toplevel: true, // Mangle top-level variable/function names
+        properties: {
+          regex: /^_/ // Mangle object properties starting with an underscore
         }
+      },
+      format: {
+        comments: false // Remove comments
       }
     }
   },
