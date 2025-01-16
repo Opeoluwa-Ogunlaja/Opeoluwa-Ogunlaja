@@ -32,7 +32,7 @@ const Home_Section = ({ className }) => {
     >
       <motion.div variants={itemLeft} className="z-0 flex flex-col gap-24 font-axiforma">
         <div className="big-text inline-block text-white max-lg:text-center">
-          I'm <strong className="scale-105 text-violet brightness-[120%]">Opeoluwa</strong>, a{' '}
+          I'm <strong className="scale-105 text-violet brightness-[140%]">Opeoluwa</strong>, a{' '}
           <TypeWriter className="big-text shadow-text origin-top-left align-baseline text-green lg:inline lg:scale-105" />
         </div>
         <p className="max-w-[70ch] font-quicksand text-white max-lg:mx-24 max-lg:text-center max-lg:text-14">
