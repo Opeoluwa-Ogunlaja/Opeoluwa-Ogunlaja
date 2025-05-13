@@ -57,7 +57,7 @@ const Testimonials_Section = ({ className }) => {
         subHeading={'What my previous clients have to say about me'}
         className={'flex flex-col items-center justify-center text-center'}
       />
-      <div className="relative mt-48 grid h-[300px] grid-rows-1 items-center justify-center overflow-hidden antialiased md:px-32">
+      <div className="relative mt-48 grid min-h-[400px] grid-rows-1 items-center justify-center overflow-hidden antialiased md:px-32">
         <Carousel
           autoPlay={true}
           interval={2000}
@@ -69,7 +69,7 @@ const Testimonials_Section = ({ className }) => {
           renderArrowNext={NextBtn}
           renderIndicator={Dot}
           showStatus={false}
-          className="absolute inset-[0] w-full bg-[transparent]"
+          className="inline-block !min-h-[400px] bg-[transparent]"
         >
           {testimonials.map((testimonial, i) => {
             return <TestimonialCard key={`${testimonial.title}${i}`} {...testimonial} />
