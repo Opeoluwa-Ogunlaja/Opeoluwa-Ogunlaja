@@ -44,10 +44,11 @@ const PrevBtn = clickHandler => CtrlBtn(clickHandler, 'left-[0]', CtrlIcon('left
 const NextBtn = clickHandler => CtrlBtn(clickHandler, 'right-[0]', CtrlIcon('right'))
 
 const Testimonials_Section = ({ className }) => {
+  const manyTestimonials = testimonials.length > 1
   return (
     <section
       className={twMerge(
-        'testimonials-section mx-auto mt-96 rounded-lg bg-neutral-9300 bg-opacity-20 max-lg:w-full max-md:p-24 md:p-64 md:pb-[0] lg:w-3/4',
+        'testimonials-section mx-auto mt-96 rounded-lg bg-neutral-9300 bg-opacity-30 max-lg:w-full max-md:p-24 md:p-64 md:pb-[0] lg:w-3/4 lg:bg-opacity-40',
         className
       )}
     >
@@ -56,14 +57,7 @@ const Testimonials_Section = ({ className }) => {
         subHeading={'What my previous clients have to say about me'}
         className={'flex flex-col items-center justify-center text-center'}
       />
-      <div className="relative mt-48 grid h-[50vh] grid-rows-1 items-center justify-center overflow-hidden antialiased md:px-32">
-        {/* <InfiniteMovingCards
-         items={testimonials}
-          innerShadow={true}
-          direction="left"
-          speed="fast"
-         renderedElement={TestimonialCard}
-       /> */}
+      <div className="relative mt-48 grid h-[300px] grid-rows-1 items-center justify-center overflow-hidden antialiased md:px-32">
         <Carousel
           autoPlay={true}
           interval={2000}
@@ -75,7 +69,7 @@ const Testimonials_Section = ({ className }) => {
           renderArrowNext={NextBtn}
           renderIndicator={Dot}
           showStatus={false}
-          className="absolute inset-[0] w-full"
+          className="absolute inset-[0] w-full bg-[transparent]"
         >
           {testimonials.map((testimonial, i) => {
             return <TestimonialCard key={`${testimonial.title}${i}`} {...testimonial} />
