@@ -2,17 +2,30 @@ import React, { useCallback, useState } from 'react'
 import './page.css'
 import { useEffect } from 'react'
 import { throttle } from '../../utilities'
+import { useAnimationFrame } from 'framer-motion'
 
 const InteractiveElement = () => {
+  const [curX, setCurX] = useState(0)
+  const [curY, setCurY] = useState(0)
   const [tgX, setTgX] = useState(0)
   const [tgY, setTgY] = useState(0)
 
-  function move(e) {
-    setTgX(e.clientX)
-    setTgY(e.clientY)
+  useAnimationFrame(() => {
+    move()
+  })
+
+  function move() {
+    setCurX(current => current + (tgX - current) / 20)
+    setCurY(current => current + (tgY - current) / 20)
   }
 
-  const eventHandler = useCallback(throttle(move, 250), [throttle])
+  const eventHandler = useCallback(
+    throttle(e => {
+      setTgX(e.clientX)
+      setTgY(e.clientY)
+    }, 250),
+    [throttle]
+  )
 
   useEffect(() => {
     window.addEventListener('mousemove', eventHandler)
@@ -26,7 +39,7 @@ const InteractiveElement = () => {
     <div
       className="interactive transition-all"
       style={{
-        transform: `translate(${Math.round(tgX)}px, ${Math.round(tgY)}px)`
+        transform: `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`
       }}
     ></div>
   )
@@ -35,11 +48,11 @@ const InteractiveElement = () => {
 export const GradientPage = () => {
   return (
     <>
-      <div className="gradient-bg after:bg-neutral-9300 max-sm:after:bg-opacity-80 sm:after:bg-opacity-85">
+      <div className="gradient-bg opacity-80 after:bg-neutral-9300 max-sm:after:bg-opacity-65 sm:after:bg-opacity-65">
         <svg xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="goo">
-              <feGaussianBlur in="SourceGraphic" stdDeviation={10} result="blur" />
+              <feGaussianBlur in="SourceGraphic" stdDeviation={156} result="blur" />
               <feColorMatrix
                 in="blur"
                 mode="matrix"

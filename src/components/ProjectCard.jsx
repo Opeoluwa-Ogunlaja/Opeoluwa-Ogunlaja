@@ -19,7 +19,7 @@ const ProjectCard = ({ image, title, description, tags }) => {
         duration: 1
       }}
       onClick={handleClick}
-      className="flex cursor-pointer flex-col rounded-sm bg-neutral-9500 bg-opacity-30 px-16 py-12 transition-transform hover:scale-105"
+      className="flex cursor-pointer flex-col rounded-sm bg-neutral-9300 bg-opacity-60 px-16 py-12 transition-transform hover:scale-105"
     >
       <div className="grid h-[172px] w-full place-items-stretch overflow-hidden rounded-sm">
         <img
@@ -31,11 +31,7 @@ const ProjectCard = ({ image, title, description, tags }) => {
       </div>
       <div className="flex flex-col gap-8">
         <h3 className="text-xl font-bold text-white">{title}</h3>
-<<<<<<< HEAD
-        <p className="text-sm text-white/80">{description}</p>
-=======
         <p className="text-sm text-neutral-1100">{description}</p>
->>>>>>> b8b0ab21ff7a8e5a4d55b71e45c8f1073c8a3315
       </div>
       <div className="mt-16 flex flex-row-reverse flex-wrap justify-end gap-8">
         {tags.map(tag => (
