@@ -22,7 +22,11 @@ const TestimonialCard = ({ name, image, role, title, organisation, review }) => 
       </header>
       <div className="mb-24 mt-16 space-y-16">
         <h5 className="font-medium">{title}</h5>
+<<<<<<< HEAD
         <p className="text-sm text-white text-opacity-90">{review}</p>
+=======
+        <p className="text-sm text-neutral-1100">{review}</p>
+>>>>>>> b8b0ab21ff7a8e5a4d55b71e45c8f1073c8a3315
       </div>
 
       <span className="mt-24 text-xs">{organisation}</span>
