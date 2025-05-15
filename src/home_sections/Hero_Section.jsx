@@ -66,9 +66,9 @@ const Home_Section = ({ className }) => {
         </div>
       </motion.div>
       <motion.div variants={itemRight} className="stage-cube-cont grid lg:m-16">
-        <div className="cubespinner text-green dark:text-violet">
+        <div className="cubespinner text-violet">
           {(() => {
-            const faceClassName = 'bg-green bg-violet bg-opacity-[0.1]'
+            const faceClassName = 'bg-violet bg-opacity-[0.1]'
             return (
               <>
                 <div className={twMerge('face face1', faceClassName)}>
