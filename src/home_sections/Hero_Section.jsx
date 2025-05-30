@@ -3,15 +3,7 @@ import React, { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { InfiniteMovingCards } from '../components/InfiniteCards'
 import Button from '../components/Button'
-import {
-  DockerLogo,
-  FigmaLogo,
-  GitLogo,
-  JSLogo,
-  MongodbLogo,
-  NodeJSLogo,
-  ReactLogo
-} from '../assets/icons'
+import { FigmaLogo, GitLogo, JSLogo, MongodbLogo, NodeJSLogo, ReactLogo } from '../assets/icons'
 import { characteristics } from '../data/data'
 import CharacterCard from '../components/CharacterCard'
 import { useModalUpdate } from './../hooks/useModalUpdate'

@@ -88,8 +88,9 @@
       background-size: contain;
       background-repeat: repeat;
       mix-blend-mode: overlay;
-      opacity: 0.6;
+      opacity: 0.2;
       background-size: 12px;
+      z-index: -1;
     }
   }
 

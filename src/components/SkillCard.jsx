@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 const SkillCard = ({ icon: Icon, title, subtitle, type }) => {
   return (
     <motion.div className="skill relative" key={title}>
-      <button className="flex aspect-square w-48  items-center justify-center rounded-sm bg-neutral-9300 bg-opacity-70">
+      <button className="flex aspect-square w-48  items-center justify-center rounded-sm bg-neutral-1300 bg-opacity-30">
         {typeof Icon !== 'string' ? (
           <Icon className={'aspect-square w-32 drop-shadow-lg'} />
         ) : (

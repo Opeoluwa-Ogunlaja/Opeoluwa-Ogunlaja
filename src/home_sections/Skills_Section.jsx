@@ -9,8 +9,6 @@ import { container } from '../data/animations'
 const Skills_Section = ({ className }) => {
   return (
     <motion.section
-      initial="hidden"
-      whileInView="visible"
       variants={container}
       className={twMerge('skills-section max-lg:mt-192 lg:mt-128', className)}
     >
@@ -20,7 +18,7 @@ const Skills_Section = ({ className }) => {
           'Over the years, I have gained mastery of various tools and languages related to web development. A few of many are shown below'
         }
       />
-      <div className="skills-grid mt-24 flex flex-wrap gap-16 px-48 max-sm:justify-center">
+      <div className="skills-grid mt-24 flex flex-wrap gap-16 max-md:px-16 max-sm:justify-center md:px-48">
         {skills.map((skill, i) => {
           return <SkillCard {...skill} key={skill.title} />
         })}
