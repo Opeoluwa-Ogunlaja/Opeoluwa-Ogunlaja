@@ -41,10 +41,11 @@
 }
 
 .gradient-bg {
+  /* display: none !important; */
   inset: 0;
   position: fixed;
   overflow: hidden;
-  z-index: -1;
+  z-index: -1000;
 
   /* background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2)); */
 

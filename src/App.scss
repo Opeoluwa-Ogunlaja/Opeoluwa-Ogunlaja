@@ -71,19 +71,16 @@
       sans-serif;
     @apply bg-neutral-9500;
     isolation: isolate;
-    container: body / inline-size;
-    grid-auto-rows: 1fr;
+    overflow-x: hidden;
+    container: body-con / inline-size;
 
     &::before,
     &::after {
+      // display: none !important;
       position: absolute;
       inset: 0;
+      width: 100%;
       content: '';
-      width: 100cqw;
-      min-height: 100cqb;
-      align-self: stretch;
-      justify-self: stretch;
-      grid-row: 1 / -1;
     }
 
     &::before {
@@ -96,8 +93,8 @@
       background-image: url('./assets/images/circle_pattern.png');
       background-size: contain;
       background-repeat: repeat;
-      mix-blend-mode: saturation;
-      opacity: 0.0657;
+      mix-blend-mode: color;
+      opacity: 0.0075;
       background-size: 12px;
       z-index: -1;
     }

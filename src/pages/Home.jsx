@@ -28,7 +28,7 @@ const Home = () => {
 
         <Form_Section className={'max-md:mt-48 md:mt-192'} />
       </SiteWrapper>
-      <footer className="relative mt-96 flex gap-24 bg-neutral-9400 bg-opacity-80 text-white max-md:flex-col max-md:items-center max-md:justify-center max-md:rounded-t-[64px] max-md:p-48 max-md:pb-64 md:justify-start md:rounded-t-[96px] md:p-64">
+      <footer className="relative mt-96 flex gap-24 bg-neutral-9400 bg-opacity-80 text-white max-md:flex-col max-md:items-center max-md:justify-center max-md:rounded-t-[64px] max-md:py-48 max-md:pb-64 md:justify-start md:rounded-t-[96px] md:p-64">
         <span className="text-green">
           <FullLogo className="w-192" />
         </span>
