@@ -9,7 +9,7 @@ import { container } from '../data/animations'
 const Skills_Section = ({ className }) => {
   return (
     <motion.section
-      // variants={container}
+      variants={container}
       className={twMerge('skills-section max-w-[100cqw] max-lg:mt-192 lg:mt-128', className)}
     >
       <SectionHeading
