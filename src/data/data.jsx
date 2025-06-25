@@ -235,7 +235,7 @@ export const projects = [
     sellingPoint: ['Chakra UI', 'Game', 'Responsive', 'Reactive', 'Engaging'],
     tags: ['game', 'react']
   },
-  {
+  /* {
     image: MonerchyImage,
     title: 'Monerchy',
     link: 'https://monerchy.vercel.app',
@@ -248,7 +248,7 @@ export const projects = [
     ],
     sellingPoint: ['TailwindCSS', 'Utility site', 'Responsive', 'Reactive', 'Useful'],
     tags: ['website', 'react']
-  }
+  }*/
 ]
 
 export const experience = [
