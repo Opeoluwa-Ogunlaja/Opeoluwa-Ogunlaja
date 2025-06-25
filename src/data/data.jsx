@@ -254,23 +254,23 @@ export const projects = [
 export const experience = [
   {
     icon: UpworkImage,
-    date: '2021 - Present',
+    date: '2023',
     company_name: 'Upwork',
     title: 'Fullstack Developer',
     points: [
       'Developing and maintaining web applications using React.js and oher related web technologies',
       'Building web applications for different niches and businesses',
-      'Giving multiple businesses an online presence'
+      'Giving businesses an online presence'
     ]
   },
-  {
+  /* {
     icon: AtobueImage,
     date: '2024 - Present',
     company_name: 'Atobue',
     title: 'Backend Developer',
     color: '#000011',
     points: ['Developing the full backend infrastructure of the website']
-  }
+  }*/
 ]
 
 export const testimonials = [
