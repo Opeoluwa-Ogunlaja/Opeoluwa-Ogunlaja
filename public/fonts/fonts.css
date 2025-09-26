@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Axiforma';
+    src: local('Axiforma Medium'), local('Axiforma-Medium'),
+        url('Axiforma-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Axiforma';
+    src: local('Axiforma SemiBold'), local('Axiforma-SemiBold'),
+        url('Axiforma-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Axiforma';
+    src: local('Axiforma Bold'), local('Axiforma-Bold'),
+        url('Axiforma-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: normal;
+    src: local('☺'),
+        url(Quicksand_400_normal.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 500;
+    src: local('☺'),
+        url(Quicksand_500_normal.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 600;
+    src: local('☺'),
+        url(Quicksand_600_normal.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    src: local('☺'),
+        url(Quicksand_700_normal.woff2) format('woff2');
+}

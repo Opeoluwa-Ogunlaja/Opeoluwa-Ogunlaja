@@ -1,0 +1,107 @@
+.stage-cube-cont {
+  container: stage / inline-size;
+  --size: var(--cube-size);
+  margin-left: calc(calc(var(--cube-size)) * -1);
+
+  @media screen and (max-width: 1080px) {
+    & {
+      align-self: self-end;
+      margin-left: calc(calc(var(--cube-size)) * -1);
+    }
+  }
+}
+
+.cubespinner {
+  animation-name: spincube;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-duration: 24s;
+  transform-style: preserve-3d;
+  transform-origin: calc(var(--size) / 2) calc(var(--size) / 2);
+  position: relative;
+
+  svg {
+    @apply shadow-[currentColor] drop-shadow-2xl;
+  }
+
+  & > .face {
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    border: 1px solid #ccc;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px 0px currentColor;
+    backdrop-filter: blur(0.175rem);
+  }
+
+  & > .face > * {
+    filter: drop-shadow(0 0 2px #661aee);
+  }
+
+  .face1 {
+    transform: translateZ(calc(var(--size) / 2));
+  }
+
+  .face2 {
+    transform: rotateY(90deg) translateZ(calc(var(--size) / 2));
+  }
+
+  .face3 {
+    transform: rotateY(90deg) rotateX(90deg) translateZ(calc(var(--size) / 2));
+  }
+
+  .face4 {
+    transform: rotateY(180deg) rotateZ(90deg) translateZ(calc(var(--size) / 2));
+  }
+
+  .face5 {
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(calc(var(--size) / 2));
+  }
+
+  .face6 {
+    transform: rotateX(-90deg) translateZ(calc(var(--size) / 2));
+  }
+}
+
+@keyframes spincube {
+  from,
+  to {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  16% {
+    transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg);
+  }
+  33% {
+    transform: rotateX(0deg) rotateY(-90deg) rotateZ(90deg);
+  }
+  50% {
+    transform: rotateX(0deg) rotateY(-180deg) rotateZ(90deg);
+  }
+  66% {
+    transform: rotateX(-90deg) rotateY(-180deg) rotateZ(90deg);
+  }
+  83% {
+    transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
+
+.scroll-indicator::after {
+  content: '';
+  @apply absolute inset-x-[0] z-20 mx-auto my-4 aspect-square w-24 rounded-full;
+  animation: moveUpAndDown 1s ease-in-out infinite alternate-reverse;
+  animation-delay: 1s;
+  transform-origin: auto center;
+
+  @keyframes moveUpAndDown {
+    50% {
+      translate: 0% 120%;
+    }
+    100% {
+      animation-delay: 2s;
+    }
+  }
+}
