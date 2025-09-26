@@ -32,14 +32,20 @@ import HTML5LogoImage from './html5.png'
 import JSLogoImage from './javascript.png'
 import AtobueImage from './atobue_logo.png'
 import UpworkImage from './up-work-favicon.ico'
+<<<<<<< HEAD
 import VicfHalfImage from './vicf display.png'
+=======
+>>>>>>> fd46cca2c906f163db7b25f910e76d9bb6f10d4e
 
 export {
   AtobueImage,
   UpworkImage,
   MindmazeImage,
   MonerchyImage,
+<<<<<<< HEAD
   VicfHalfImage,
+=======
+>>>>>>> fd46cca2c906f163db7b25f910e76d9bb6f10d4e
   NodeJSLogoImage,
   NextJSLogoImage,
   TailwindCSSLogoImage,
