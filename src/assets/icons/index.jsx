@@ -1,4 +1,4 @@
-import FullLogo from './full_logo.svg?react'
+import FullLogo from './full_logo_2.svg?react'
 import ReactLogo from './react.svg?react'
 import TestimonialQuoteIcon from './t-quote.svg?react'
 import BookOpenIcon from './book_open.svg?react'

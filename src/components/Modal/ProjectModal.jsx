@@ -19,7 +19,7 @@ const ProjectModal = () => {
     >
       <div className="pointer-events-auto mx-auto grid h-full grid-cols-1 place-content-center">
         <div
-          className="absolute right-[0] grid h-full gap-24 bg-neutral-9400/85 shadow-md backdrop-blur-sm max-sm:w-[320px] sm:w-[380px] md:bg-neutral-9500/60"
+          className="absolute right-[0] grid h-full gap-24 bg-neutral-9400/95 shadow-md backdrop-blur-sm max-sm:w-[320px] sm:w-[380px] md:bg-neutral-9500/75"
           style={{ gridTemplateRows: 'max-content minmax(0, 1fr) max-content' }}
         >
           <header className="flex h-64 items-center justify-end border-b-2 border-gray px-16">
@@ -31,7 +31,7 @@ const ProjectModal = () => {
             <div className="mt-32 space-y-24">
               <div className="contents">
                 <h3 className="font-axiforma text-3xl font-bold text-white">{project?.title}</h3>
-                <p className="mb-32 text-neutral-1200">{project?.description}</p>
+                <p className="mb-32 text-neutral-1100">{project?.description}</p>
               </div>
               <img src={project?.image} alt={`${project?.title} logo`} className="h-192 w-full" />
             </div>

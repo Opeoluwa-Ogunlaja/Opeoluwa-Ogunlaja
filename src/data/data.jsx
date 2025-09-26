@@ -16,6 +16,7 @@ import {
   MindmazeImage,
   MonerchyImage,
   NodeJSLogoImage,
+  VicfHalfImage,
   PHPLogoImage,
   ElementorLogoImage,
   ExpressLogoImage,
@@ -223,6 +224,38 @@ export const skills = [
 
 export const projects = [
   {
+    image: VicfHalfImage,
+    title: 'Vicf',
+    link: 'https://vicf.onrender.com/home',
+    description:
+      'A web application for keeping records of contacts and exporting them in different format. Perfect for assimilation teams as users can collaborate to curate lists.',
+    takeaways: [
+      'Learnt to work with Websockets',
+      'Implemented Offline functionality with core Web APIs like IndexedDB and Service Workers',
+      'Used Caching to make improve throughput and greatly improve user experience and satisfaction'
+    ],
+    sellingPoint: [
+      'Offline First',
+      'Functional',
+      'Clean Architecture',
+      'Sockets',
+      'Responsive',
+      'Reactive',
+      'Engaging'
+    ],
+    tags: ['website', 'react']
+  },
+  {
+    title: 'Throst – Split expenses with friends.',
+    image: '/assets/throst-cover.webp',
+    tags: ['website', 'react'],
+    link: 'https://vicf.onrender.com/home',
+    sellingPoint: ['Responsive', 'Functional', 'Engaging', 'Collaboration'],
+    takeaways: ['Learnt to work in a team'],
+    description:
+      'Throst is an app that makes it easy to split expenses with friends during group activities. Users can create a group for things like trips, hangouts, or shared events, invite the people involved, and add each item that was paid for, including who paid and who shared in the cost. Throst then splits the expense fairly and shows how much each person owes.'
+  },
+  {
     image: MindmazeImage,
     title: 'Mindmaze',
     link: 'https://mindmaze-nine.vercel.app',
@@ -234,8 +267,8 @@ export const projects = [
     ],
     sellingPoint: ['Chakra UI', 'Game', 'Responsive', 'Reactive', 'Engaging'],
     tags: ['game', 'react']
-  }
-  /* {
+  },
+  {
     image: MonerchyImage,
     title: 'Monerchy',
     link: 'https://monerchy.vercel.app',
@@ -248,29 +281,29 @@ export const projects = [
     ],
     sellingPoint: ['TailwindCSS', 'Utility site', 'Responsive', 'Reactive', 'Useful'],
     tags: ['website', 'react']
-  }*/
+  }
 ]
 
 export const experience = [
   {
     icon: UpworkImage,
-    date: '2023',
+    date: '2021 - Present',
     company_name: 'Upwork',
     title: 'Fullstack Developer',
     points: [
       'Developing and maintaining web applications using React.js and oher related web technologies',
       'Building web applications for different niches and businesses',
-      'Giving businesses an online presence'
+      'Giving multiple businesses an online presence'
     ]
-  }
-  /* {
+  },
+  {
     icon: AtobueImage,
     date: '2024 - Present',
     company_name: 'Atobue',
     title: 'Backend Developer',
     color: '#000011',
     points: ['Developing the full backend infrastructure of the website']
-  }*/
+  }
 ]
 
 export const testimonials = [
