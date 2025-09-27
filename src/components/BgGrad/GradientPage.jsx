@@ -1,45 +1,45 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useRef } from 'react'
 import './page.css'
 import { useEffect } from 'react'
-import { throttle } from '../../utilities'
-import { useAnimationFrame } from 'framer-motion'
 
 const InteractiveElement = () => {
-  const [curX, setCurX] = useState(0)
-  const [curY, setCurY] = useState(0)
-  const [tgX, setTgX] = useState(0)
-  const [tgY, setTgY] = useState(0)
+  const [cur, setCur] = useState({ x: 0, y: 0 })
+  const target = useRef({ x: 0, y: 0 })
+  const reqRef = useRef()
 
-  useAnimationFrame(() => {
-    move()
-  })
-
-  function move() {
-    setCurX(current => current + (tgX - current) / 20)
-    setCurY(current => current + (tgY - current) / 20)
-  }
-
-  const eventHandler = useCallback(
-    throttle(e => {
-      setTgX(e.clientX)
-      setTgY(e.clientY)
-    }, 250),
-    [throttle]
-  )
+  // Smoother, less staggered movement
+  const move = useCallback(() => {
+    setCur(prev => {
+      const dx = target.current.x - prev.x
+      const dy = target.current.y - prev.y
+      // Faster catch-up, less stagger
+      return {
+        x: prev.x + dx * 0.25,
+        y: prev.y + dy * 0.25
+      }
+    })
+    reqRef.current = requestAnimationFrame(move)
+  }, [])
 
   useEffect(() => {
-    window.addEventListener('mousemove', eventHandler)
+    reqRef.current = requestAnimationFrame(move)
+    return () => cancelAnimationFrame(reqRef.current)
+  }, [move])
 
-    return () => {
-      window.removeEventListener('mousemove', eventHandler)
+  useEffect(() => {
+    const handler = e => {
+      target.current.x = e.clientX
+      target.current.y = e.clientY
     }
+    window.addEventListener('mousemove', handler)
+    return () => window.removeEventListener('mousemove', handler)
   }, [])
 
   return (
     <div
-      className="interactive transition-all"
+      className="interactive transition-transform"
       style={{
-        transform: `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`
+        transform: `translate(${Math.round(cur.x)}px, ${Math.round(cur.y)}px)`
       }}
     ></div>
   )
@@ -48,18 +48,18 @@ const InteractiveElement = () => {
 export const GradientPage = ({ children }) => {
   return (
     <>
-      <div className="gradient-bg opacity-80 after:bg-neutral-9300 max-sm:after:bg-opacity-65 sm:after:bg-opacity-65">
+      <div className="gradient-bg opacity-70 after:bg-neutral-9300 max-sm:after:bg-opacity-50 sm:after:bg-opacity-50">
         <svg xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="goo">
-              <feGaussianBlur in="SourceGraphic" stdDeviation={156} result="blur" />
+              <feGaussianBlur in="SourceGraphic" stdDeviation="40" result="blur" />
               <feColorMatrix
                 in="blur"
-                mode="matrix"
-                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+                type="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 12 -6"
                 result="goo"
               />
-              <feBlend in="SourceGraphic" in2="goo" />
+              <feBlend in="SourceGraphic" in2="goo" mode="normal" />
             </filter>
           </defs>
         </svg>
