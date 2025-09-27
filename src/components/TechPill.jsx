@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 const TechPill = ({ icon: Icon, tagTitle, className }) => {
@@ -15,4 +15,4 @@ const TechPill = ({ icon: Icon, tagTitle, className }) => {
   )
 }
 
-export default TechPill
+export default memo(TechPill)

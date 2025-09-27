@@ -8,6 +8,7 @@ import { twMerge } from 'tailwind-merge'
 /**
  * @type {import('tailwindcss/tailwind-config').TailwindConfig['theme']}
  */ import { motion } from 'framer-motion'
+import { memo } from 'react'
 
 const button = cva(
   'cta-btn p-12 font-semibold rounded-sm max-lg:text-14 text-16 font-axiforma transition-all shadow-md disabled:bg-opacity-20',
@@ -38,4 +39,4 @@ const Button = props => {
   )
 }
 
-export default Button
+export default memo(Button)

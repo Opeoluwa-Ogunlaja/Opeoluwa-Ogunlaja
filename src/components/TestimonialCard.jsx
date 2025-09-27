@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { TestimonialQuoteIcon } from '../assets/icons'
 
 const TestimonialCard = ({ name, image, role, title, organisation, review }) => {
@@ -30,4 +30,4 @@ const TestimonialCard = ({ name, image, role, title, organisation, review }) => 
   )
 }
 
-export default TestimonialCard
+export default memo(TestimonialCard)

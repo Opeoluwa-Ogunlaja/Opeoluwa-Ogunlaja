@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 const SectionHeading = ({ heading, subHeading, className }) => {
@@ -10,4 +10,4 @@ const SectionHeading = ({ heading, subHeading, className }) => {
   )
 }
 
-export default SectionHeading
+export default memo(SectionHeading)

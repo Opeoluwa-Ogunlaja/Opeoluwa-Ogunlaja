@@ -1,8 +1,9 @@
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
 import { experience } from '../data/data'
+import { memo } from 'react'
 
-const ExperienceCard = ({ experience }) => {
+const ExperienceCard = memo(({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
@@ -42,7 +43,7 @@ const ExperienceCard = ({ experience }) => {
       </ul>
     </VerticalTimelineElement>
   )
-}
+})
 
 const Experience = () => {
   return (
@@ -58,4 +59,4 @@ const Experience = () => {
   )
 }
 
-export default Experience
+export default memo(Experience)

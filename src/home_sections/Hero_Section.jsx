@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { InfiniteMovingCards } from '../components/InfiniteCards'
 import Button from '../components/Button'
@@ -10,6 +10,40 @@ import { useModalUpdate } from './../hooks/useModalUpdate'
 import { container, itemLeft, itemRight } from '../data/animations'
 import { useNavigate } from 'react-router-dom'
 import TypeWriter from '../components/TypeWriter'
+
+const Skill_Box = memo(() => {
+  return (
+    <motion.div variants={itemRight} className="stage-cube-cont grid lg:m-16">
+      <div className="cubespinner text-violet">
+        {(() => {
+          const faceClassName = 'bg-violet bg-opacity-[0.1]'
+          return (
+            <>
+              <div className={twMerge('face face1', faceClassName)}>
+                <ReactLogo />
+              </div>
+              <div className={twMerge('face face2', faceClassName)}>
+                <FigmaLogo className="scale-85" />
+              </div>
+              <div className={twMerge('face face3', faceClassName)}>
+                <NodeJSLogo />
+              </div>
+              <div className={twMerge('face face4', faceClassName)}>
+                <MongodbLogo />
+              </div>
+              <div className={twMerge('face face5', faceClassName)}>
+                <GitLogo />
+              </div>
+              <div className={twMerge('face face6', faceClassName)}>
+                <JSLogo />
+              </div>
+            </>
+          )
+        })()}
+      </div>
+    </motion.div>
+  )
+})
 
 const Home_Section = ({ className }) => {
   const { openModal } = useModalUpdate()
@@ -57,35 +91,7 @@ const Home_Section = ({ className }) => {
           </Button>
         </div>
       </motion.div>
-      <motion.div variants={itemRight} className="stage-cube-cont grid lg:m-16">
-        <div className="cubespinner text-violet">
-          {(() => {
-            const faceClassName = 'bg-violet bg-opacity-[0.1]'
-            return (
-              <>
-                <div className={twMerge('face face1', faceClassName)}>
-                  <ReactLogo />
-                </div>
-                <div className={twMerge('face face2', faceClassName)}>
-                  <FigmaLogo className="scale-85" />
-                </div>
-                <div className={twMerge('face face3', faceClassName)}>
-                  <NodeJSLogo />
-                </div>
-                <div className={twMerge('face face4', faceClassName)}>
-                  <MongodbLogo />
-                </div>
-                <div className={twMerge('face face5', faceClassName)}>
-                  <GitLogo />
-                </div>
-                <div className={twMerge('face face6', faceClassName)}>
-                  <JSLogo />
-                </div>
-              </>
-            )
-          })()}
-        </div>
-      </motion.div>
+      <Skill_Box />
       <div className="scroll-indicator m-0 bottom-0 absolute z-10 aspect-[1/2] w-32 self-end justify-self-center rounded-[9999px] border border-neutral-1200 shadow-inner after:bg-green max-lg:-mb-[312px] lg:-mb-64"></div>
     </motion.section>
   )

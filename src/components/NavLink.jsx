@@ -1,5 +1,6 @@
 import { cva } from 'class-variance-authority'
 import clsx from 'clsx'
+import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
@@ -25,4 +26,4 @@ const Navlink = ({ children, className, to, activeClass }) => {
   )
 }
 
-export default Navlink
+export default memo(Navlink)

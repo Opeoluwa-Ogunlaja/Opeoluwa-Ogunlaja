@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { memo, useRef } from 'react'
 import { useToggle } from '../hooks/useToggle'
 import { FullLogo } from '../assets/icons'
 import { twMerge } from 'tailwind-merge'
@@ -50,4 +50,4 @@ const Topnav = () => {
   )
 }
 
-export default Topnav
+export default memo(Topnav)

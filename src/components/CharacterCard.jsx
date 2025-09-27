@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const CharacterCard = ({ icon: Icon, character }) => {
   return (
@@ -9,4 +9,4 @@ const CharacterCard = ({ icon: Icon, character }) => {
   )
 }
 
-export default CharacterCard
+export default memo(CharacterCard)

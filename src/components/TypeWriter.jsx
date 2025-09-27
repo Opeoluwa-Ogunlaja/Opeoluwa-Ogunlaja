@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useLayoutEffect, useRef, useState } from 'react'
+import { memo, useLayoutEffect, useRef, useState } from 'react'
 
 export const sentenceVariants = {
   hidden: {
@@ -73,4 +73,4 @@ const Typewriter = ({ ...rest }) => {
   )
 }
 
-export default Typewriter
+export default memo(Typewriter)

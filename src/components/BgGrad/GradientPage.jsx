@@ -45,7 +45,7 @@ const InteractiveElement = () => {
   )
 }
 
-export const GradientPage = () => {
+export const GradientPage = ({ children }) => {
   return (
     <>
       <div className="gradient-bg opacity-80 after:bg-neutral-9300 max-sm:after:bg-opacity-65 sm:after:bg-opacity-65">
@@ -72,6 +72,7 @@ export const GradientPage = () => {
           <InteractiveElement />
         </div>
       </div>
+      {children}
     </>
   )
 }

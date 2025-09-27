@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import TechPill from './TechPill'
 import { projectFromTitle, tagFromTitle } from '../data/data'
 import { useModalUpdate } from '../hooks/useModalUpdate'
@@ -42,4 +42,4 @@ const ProjectCard = ({ image, title, description, tags }) => {
   )
 }
 
-export default ProjectCard
+export default memo(ProjectCard)

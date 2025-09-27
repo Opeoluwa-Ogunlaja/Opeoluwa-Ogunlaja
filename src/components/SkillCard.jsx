@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { twMerge } from 'tailwind-merge'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
@@ -27,4 +27,4 @@ const SkillCard = ({ icon: Icon, title, subtitle, type }) => {
   )
 }
 
-export default SkillCard
+export default memo(SkillCard)
