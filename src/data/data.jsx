@@ -249,7 +249,7 @@ export const projects = [
     title: 'Throst – Split expenses with friends.',
     image: '/assets/throst-cover.webp',
     tags: ['website', 'react'],
-    link: 'https://vicf.onrender.com/home',
+    link: 'https://throst.vercel.app/',
     sellingPoint: ['Responsive', 'Functional', 'Engaging', 'Collaboration'],
     takeaways: ['Learnt to work in a team'],
     description:
